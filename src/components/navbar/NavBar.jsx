@@ -8,16 +8,10 @@ import {
 } from 'react-router-dom';
 import './navbar.css';
 
-import LoremIpsum from './LoremIpsum';
-
 function NavBar() {
   return (
     <>
-      <div className="navbarHorizontalBloc">
-        <Link to="/">Droit2Veto</Link>
-        <p>Profil en cours</p>
-      </div>
-      <nav>
+      <nav className="navbarVerticaleBloc">
         <ul>
           <li>
             <Link to="/informations">Mes informations</Link>

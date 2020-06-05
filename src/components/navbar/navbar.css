@@ -27,11 +27,11 @@
     position: -webkit-sticky;
     position: sticky;
     top:14vh;
-    width: 30vw;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     border: solid;
     border-color: black;
-    height: 85vh;
+    height: 86vh;
     background-color: white;
 }

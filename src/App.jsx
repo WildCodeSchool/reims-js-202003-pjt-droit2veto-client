@@ -15,6 +15,11 @@ function App() {
   return (
     <>
       <Router>
+        <div className="navbarHorizontalBloc">
+          <Link className="navbarTitle" to="/">Droit2Veto</Link>
+          <p>Profil en cours</p>
+        </div>
+        <div className="navbarPage">
           <NavBar />
           <Switch>
             <Route exact path="/">
@@ -33,6 +38,7 @@ function App() {
               <LoremIpsum />
             </Route>
           </Switch>
+        </div>
       </Router>
     </>
   );
