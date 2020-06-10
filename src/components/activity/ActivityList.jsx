@@ -4,10 +4,10 @@ import './ActivityList.css';
 
 function ActivityList() {
   const tableauActivity = [
-    { id: '1', title: 'orstéo', décrition: 'ifjzojso' },
-    { id: '2', title: 'orstéo', décrition: 'ifjzojso' },
-    { id: '3', title: 'orstéo', décrition: 'ifjzojso' },
-    { id: '4', title: 'orstéo', décrition: 'ifjzojso' },
+    { id: '1', title: 'orstéo', description: 'ifjzojso' },
+    { id: '2', title: 'orstéo', description: 'ifjzojso' },
+    { id: '3', title: 'orstéo', description: 'ifjzojso' },
+    { id: '4', title: 'orstéo', description: 'ifjzojso' },
   ];
   return (
     <div className="allMeActivity">
