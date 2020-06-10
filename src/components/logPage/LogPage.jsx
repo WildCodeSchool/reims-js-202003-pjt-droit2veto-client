@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Home from './Home';
 import './logPage.css';
 
 const LogPage = () => {
@@ -29,9 +28,9 @@ const LogPage = () => {
             <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="Numéro ordinal" required />
           </div>
           <p className="logPageFormText">Déjà membre ? Connectez-vous ici</p>
-          <button className="logPageFormButton" type="submit">
+          <Link className="logPageFormButton" to="/home">
             Me connecter
-          </button>
+          </Link>
         </form>
       </section>
     </div>
