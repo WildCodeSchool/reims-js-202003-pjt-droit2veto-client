@@ -15,12 +15,12 @@ function ActivityList() {
         </button>
       </section>
       <div>
-        <Activity title="échocardiographie" descritions="sqijdkqd,lqkxajdgsjql<xjjfgs" />
-        <Activity title="échographie" descritions="sqijdkqd,lqkxajdgsjql<xjjfgs" />
-        <Activity title="médecine générale" descritions="sqijdkqd,lqkxajdgsjql<xjjfgs" />
-        <Activity title="médecine interne" descritions="sqijdkqd,lqkxajdgsjql<xjjfgs" />
-        <Activity title="ostéopathie" descritions="sqijdkqd,lqkxajdgsjql<xjjfgs" />
-        <Activity title="pneumologie" descritions="sqijdkqd,lqkxajdgsjql<xjjfgs" />
+        <Activity title="échocardiographie" descrition="sqijdkqd,lqkxajdgsjql<xjjfgs" />
+        <Activity title="échographie" descrition="sqijdkqd,lqkxajdgsjql<xjjfgs" />
+        <Activity title="médecine générale" descrition="sqijdkqd,lqkxajdgsjql<xjjfgs" />
+        <Activity title="médecine interne" descrition="sqijdkqd,lqkxajdgsjql<xjjfgs" />
+        <Activity title="ostéopathie" descrition="sqijdkqd,lqkxajdgsjql<xjjfgs" />
+        <Activity title="pneumologie" descrition="sqijdkqd,lqkxajdgsjql<xjjfgs" />
       </div>
     </div>
   );
