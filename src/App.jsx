@@ -8,8 +8,10 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+import './components/BlocTuto/BlocTuto'
 
 import LoremIpsum from './components/navbar/LoremIpsum';
+import BlocTuto from './components/BlocTuto/BlocTuto';
 
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <LoremIpsum />
+              <BlocTuto/>
             </Route>
             <Route exact path="/informations">
               <LoremIpsum />
