@@ -9,7 +9,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-import LoremIpsum from './components/navbar/LoremIpsum';
+import LoremIpsum from './components/test/LoremIpsum';
 
 function App() {
   return (
