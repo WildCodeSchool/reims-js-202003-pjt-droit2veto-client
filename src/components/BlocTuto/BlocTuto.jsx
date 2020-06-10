@@ -1,47 +1,47 @@
 import React from 'react';
-import './BlocTuto.css'
+import './BlocTuto.css';
+import { Router, Switch, Route, Link } from 'react-router-dom';
 
-class BlocTuto extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+function BlocTuto() {
+  return (
 
-  render() {
-    return (
-      <div className="choixPage">
 
-        <div className="flexButtonLigne1">
+      <div className="x">
 
-          <div>
-            <button className="tutoButton" type="button"> Mes informations</button>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
+        <div className="choixPage">
+
+          <div className="flexButtonLigne1">
+
+            <div className="ButtonLink">
+              <Link to="/informations" className="tutoButton">Mes informations</Link>
+              <p className="paraButton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
+            </div>
+
+            <div className="ButtonLink">
+              <Link to="/activities" className="tutoButton"> Mes activités </Link>
+              <p className="paraButton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
+            </div>
+
           </div>
 
-          <div>
-            <button className="tutoButton" type="button"> Mes activités</button>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
+          <div className="flexButtonLigne2">
+
+            <div className="ButtonLink">
+              <Link to="/anesthesia" className="tutoButton"> Plaquette d'anesthésie </Link>
+              <p className="paraButton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
+            </div>
+            <div className="ButtonLink">
+              <Link to="/order" className="tutoButton"> Ma commande </Link>
+              <p className="paraButton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
+            </div>
+
           </div>
 
         </div>
 
-        <div className="flexButtonLigne2">
-
-          <div>
-            <button className="tutoButton" type="button"> Plaquette d'anesthésie</button>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
-          </div>
-          <div>
-            <button className="tutoButton" type="button"> Ma commande</button>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
-          </div>
-
-        </div>
 
       </div>
-    );
-  }
-};
+  );
+}
 
 export default BlocTuto;

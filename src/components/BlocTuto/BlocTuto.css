@@ -1,12 +1,24 @@
+.choixPage{
+    margin: 5%;
+}
+
+.ButtonLink{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.paraButton{
+    text-align: center;
+}
 .tutoButton {
     color: antiquewhite;
     background-color: #01C3E2;
-    border-radius: 3%;
+    border-radius: 5%;
     border: none;
     text-align: center;
     font-size: 32px;
-    width:350px;
-    line-height:75px;
+    padding: 3%;
+    width: 70%;
 }
 
 .flexButtonLigne1{
