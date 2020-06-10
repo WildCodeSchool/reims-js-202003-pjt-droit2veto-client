@@ -12,7 +12,7 @@ function ActivityList() {
         </div>
         <button className="ValButMeActivity" onClick={() => console.log('je suis un boutton!')}>
           Valider
-      </button>
+        </button>
       </section>
       <div>
         <Activity title="échocardiographie" descritions="sqijdkqd,lqkxajdgsjql<xjjfgs" />
