@@ -10,7 +10,7 @@ function Activity({ activities }) {
           <h1 className="TitleActivity">{act.title}</h1>
           <details className="DetailActivity">
             <summary />
-            <p>{act.décrition}</p>
+            <p>{act.description}</p>
           </details>
         </div>
         <div className="Toogle">
