@@ -1,29 +1,37 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Home from './Home';
+import './logPage.css';
 
 const LogPage = () => {
   return (
-    <div className="">
-      <section className="">
-        <h1 className="">Droit2Veto</h1>
-        <p className="">Lorem ipsum dolor sit amet <span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
+    <div className="logPageContainer">
+      <section className="logPageLeft">
+        <h1 className="logPageTitle">Droit2Veto</h1>
+        <div className="logPageTextDiv">
+          <p className="logPageText1">Lorem ipsum dolor sit amet</p>
+          <p className="logPageText2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
       </section>
-      <section className="">
-        <form className="">
-          <p className="">Créer votre compte</p>
-          <div className="">
-            <label className="" for="email">Adresse mail</label>
-            <input className="" type="email" name="mail" id='mail'></input>
+      <section className="logPageRight">
+        <h1 className="logPageText1">Créer votre compte </h1>
+        <form>
+          <div className="logPageFormInputDiv">
+            <label htmlFor="email" />
+            <input className="logPageFormInput" type="email" name="mail" id="email" placeholder="Adresse mail" required />
           </div>
-          <div className="">
-            <label className="" for="name">Nom</label>
-            <input className="" type="text" name="name" id='name'></input>
+          <div className="logPageFormInputDiv">
+            <label htmlFor="name" />
+            <input className="logPageFormInput" type="text" name="name" id="name" placeholder="Nom" required />
           </div>
-          <div className="">
-            <label className="" for="ordinal_number">Numéro ordinal</label>
-            <input className="" type="text" name="ordinal_number" id='ordinal_number'></input>
+          <div className="logPageFormInputDiv">
+            <label htmlFor="ordinal_number" />
+            <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="Numéro ordinal" required />
           </div>
-          <p>Déjà membre ? Connectez-vous ici</p>
-            <button type="submit">Me connecter</button>
+          <p className="logPageFormText">Déjà membre ? Connectez-vous ici</p>
+          <button className="logPageFormButton" type="submit">
+            Me connecter
+          </button>
         </form>
       </section>
     </div>
