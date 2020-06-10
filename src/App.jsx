@@ -26,13 +26,13 @@ function App() {
               <LoremIpsum />
             </Route>
             <Route exact path="/informations">
-              <LoremIpsum />
+              <LoremIpsum /> { /* Information */ }
             </Route>
             <Route excat path="/anesthesia">
               <LoremIpsum />
             </Route>
             <Route exact path="/activities">
-              <LoremIpsum />
+              <LoremIpsum /> {/* ActivityList */}
             </Route>
             <Route exact path="/order">
               <LoremIpsum />
