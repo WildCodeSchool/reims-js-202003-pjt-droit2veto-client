@@ -1,0 +1,20 @@
+.allMeActivity{
+    border: solid black 2px;
+    border-radius: 8px;
+}
+
+.MeActivity {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: solid black 1px;
+}
+
+.ValButMeActivity{
+    padding: 15px 32px;
+    background-color: #01C3E2;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: none;
+}
