@@ -9,8 +9,10 @@ import {
   Link,
 } from 'react-router-dom';
 
-import LoremIpsum from './components/navbar/LoremIpsum';
+
+import LoremIpsum from './components/test/LoremIpsum';
 import BlocTuto from './components/bloctuto/BlocTuto';
+import Information from './components/information/Information';
 
 function App() {
   return (
@@ -24,16 +26,16 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <BlocTuto/>
+              <BlocTuto />
             </Route>
             <Route exact path="/informations">
-              <LoremIpsum />
+              <Information />
             </Route>
             <Route excat path="/anesthesia">
               <LoremIpsum />
             </Route>
             <Route exact path="/activities">
-              <LoremIpsum />
+              <LoremIpsum /> {/* ActivityList */}
             </Route>
             <Route exact path="/order">
               <LoremIpsum />

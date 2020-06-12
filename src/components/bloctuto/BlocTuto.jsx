@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 function BlocTuto() {
   return (
 
-
     <div className="choixPage">
 
       <div className="flexButtonLigne1">
@@ -36,7 +35,6 @@ function BlocTuto() {
       </div>
 
     </div>
-
 
   );
 }

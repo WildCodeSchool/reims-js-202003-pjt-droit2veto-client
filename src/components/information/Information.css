@@ -1,0 +1,31 @@
+.formInfo {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    margin-left: 3vw;
+}
+
+.labelInfo {
+    display: flex;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.titleInfo {
+    display: flex;
+}
+
+.villeInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.codeInfo {
+    margin-left: 6.5vw;
+}
+
+.buttonInfo {
+    margin: 3vw 0 3vw 20vw;
+}
+
+
