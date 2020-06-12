@@ -1,5 +1,5 @@
 import React from 'react';
-import './BlocTuto.css'
+import './BlocTuto.css';
 
 class BlocTuto extends React.Component {
   constructor(props) {
