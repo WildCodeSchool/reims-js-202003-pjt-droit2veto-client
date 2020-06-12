@@ -1,5 +1,5 @@
 import React from 'react';
-import './BlocTuto.css';
+import './blocTuto.css';
 import { Link } from 'react-router-dom';
 
 function BlocTuto() {

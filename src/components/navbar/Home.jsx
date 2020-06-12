@@ -9,7 +9,7 @@ import {
 import NavBar from './NavBar';
 import './navbar.css';
 import LoremIpsum from '../test/LoremIpsum';
-import BlocTuto from '../bloctuto/BlocTuto';
+import BlocTuto from '../blocTuto/BlocTuto';
 import Information from '../information/Information';
 
 const Home = () => (
@@ -21,7 +21,7 @@ const Home = () => (
     <div className="navbarPage">
       <NavBar />
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/home">
           <BlocTuto />
         </Route>
         <Route exact path="/informations">
