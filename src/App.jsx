@@ -8,10 +8,9 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import './components/BlocTuto/BlocTuto'
 
 import LoremIpsum from './components/navbar/LoremIpsum';
-import BlocTuto from './components/BlocTuto/BlocTuto';
+import BlocTuto from './components/bloctuto/BlocTuto';
 
 function App() {
   return (
