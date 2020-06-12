@@ -7,8 +7,10 @@ import {
   Link,
 } from 'react-router-dom';
 import NavBar from './NavBar';
-import LoremIpsum from './LoremIpsum';
 import './navbar.css';
+import LoremIpsum from '../test/LoremIpsum';
+import BlocTuto from '../bloctuto/BlocTuto';
+import Information from '../information/Information';
 
 const Home = () => (
   <Router>
@@ -19,17 +21,17 @@ const Home = () => (
     <div className="navbarPage">
       <NavBar />
       <Switch>
-        <Route exact path="/home">
-          <LoremIpsum />
+        <Route exact path="/">
+          <BlocTuto />
         </Route>
         <Route exact path="/informations">
-          <LoremIpsum />
+          <Information />
         </Route>
         <Route excat path="/anesthesia">
           <LoremIpsum />
         </Route>
         <Route exact path="/activities">
-          <LoremIpsum />
+          <LoremIpsum /> {/* ActivityList */}
         </Route>
         <Route exact path="/order">
           <LoremIpsum />
