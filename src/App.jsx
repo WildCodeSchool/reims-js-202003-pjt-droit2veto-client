@@ -10,7 +10,8 @@ import {
 } from 'react-router-dom';
 
 
-import LoremIpsum from './components/navbar/LoremIpsum';
+import LoremIpsum from './components/test/LoremIpsum';
+import BlocTuto from './components/bloctuto/BlocTuto';
 import Information from './components/information/Information';
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <LoremIpsum />
+              <BlocTuto />
             </Route>
             <Route exact path="/informations">
               <Information />
