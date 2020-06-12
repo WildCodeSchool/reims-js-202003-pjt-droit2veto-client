@@ -9,7 +9,9 @@ import {
   Link,
 } from 'react-router-dom';
 
-import LoremIpsum from './components/test/LoremIpsum';
+
+import LoremIpsum from './components/navbar/LoremIpsum';
+import Information from './components/information/Information';
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
               <LoremIpsum />
             </Route>
             <Route exact path="/informations">
-              <LoremIpsum /> { /* Information */ }
+              <Information />
             </Route>
             <Route excat path="/anesthesia">
               <LoremIpsum />

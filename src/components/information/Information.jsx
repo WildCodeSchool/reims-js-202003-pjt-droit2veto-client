@@ -1,67 +1,71 @@
 import React from 'react';
 import './Information.css';
+import Valider from './ValiderInfo';
 
 function Information() {
     return(
         <>
-        <form className="formInfo">
+        <form className="formInfo"  onSubmit={(event) => {
+          Valider()
+          event.preventDefault();
+        }} name="formulaire">
             <h1 className="titleInfo">Mes informations</h1>
-            <label className="labelInfo">
+            <label htmlFor="nom"className="labelInfo">
               Nom
             </label>
-            <textarea rows="1"></textarea>
-            <label className="labelInfo">
+            <input type="text" name="nom" id="nom"/>
+            <label for="prenom" className="labelInfo">
               Prénom
             </label>
-            <textarea rows="1"></textarea>
-            <label className="labelInfo">
+            <input type="text" name="prenom" id="prenom"/>
+            <label for="ordinal"className="labelInfo">
               Numéro ordinal
             </label>
-            <textarea rows="1"></textarea>
-            <label className="labelInfo">
+            <input type="text" name="ordinal" id="ordinal"/>
+            <label for="etablissement"className="labelInfo">
               Nom de l'établissement
             </label>
-            <textarea rows="1"></textarea>
-            <label className="labelInfo">
+            <input type="text" name="etablissement" id="etablissement"/>
+            <label for="adresse"className="labelInfo">
               Adresse de l'établissement 1
             </label>
-            <textarea rows="1"></textarea>
+            <input type="text" name="adresse" id="adresse"/>
             <label className="labelInfo">
               Adresse de l'établissement 2
             </label>
-            <textarea rows="1"></textarea>
+            <input type="text" />
             <div className="villeInfo">
               <div>
-                <label className="labelInfo">
+                <label for="ville" className="labelInfo">
                   Ville
                 </label>
-                <textarea rows="1"></textarea>
+                <input type="text" name="ville" id="ville"/>
               </div>
               <div className="codeInfo">
-                <label className="labelInfo">
+                <label for="code"className="labelInfo">
                   Code postal
                 </label>
-                <textarea rows="1"></textarea>
+                <input type="text" name="code" id="code"/>
               </div>
             </div>
-            <label className="labelInfo">
+            <label for="pays"className="labelInfo">
               Pays
             </label>
-            <textarea rows="1"></textarea>
-            <label className="labelInfo">
+            <input type="text" name="pays" id="pays"/>
+            <label for="tel"className="labelInfo">
               Téléphone fixe de l'établissement
             </label>
-            <textarea rows="1"></textarea>
-            <label className="labelInfo">
+            <input type="text" name="tel" id="tel"/>
+            <label for="telPerso" className="labelInfo">
               Téléphone personnel
             </label>
-            <textarea rows="1"></textarea>
+            <input type="text" name="telPerso" id="telPerso"/>
             <label className="labelInfo">
               Logo
             </label>
               <input type="file"/>
             <div className="buttonInfo">
-              <button type="button">Modifier</button>
+              <button type="submit" >Valider</button>
             </div>
         </form>
         </>
