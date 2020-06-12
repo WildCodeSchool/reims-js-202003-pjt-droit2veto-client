@@ -15,6 +15,9 @@ function ActivityList() {
         <div>
           <h1>Mes Activités</h1>
           <p>veuillez cocher les Activités de votre établisment (max 20)</p>
+          <button className="ValButMeActivity" onClick={() => console.log('je suis un boutton!')}>
+            Valider
+          </button>
         </div>
       </section>
       <div>
