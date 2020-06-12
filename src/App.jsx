@@ -9,6 +9,7 @@ import {
   Link,
 } from 'react-router-dom';
 
+
 import LoremIpsum from './components/navbar/LoremIpsum';
 import Information from './components/information/Information';
 
@@ -33,7 +34,7 @@ function App() {
               <LoremIpsum />
             </Route>
             <Route exact path="/activities">
-              <LoremIpsum />
+              <LoremIpsum /> {/* ActivityList */}
             </Route>
             <Route exact path="/order">
               <LoremIpsum />

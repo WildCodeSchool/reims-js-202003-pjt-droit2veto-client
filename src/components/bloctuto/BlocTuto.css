@@ -1,0 +1,22 @@
+.tutoButton {
+    color: antiquewhite;
+    background-color: #01C3E2;
+    border-radius: 3%;
+    border: none;
+    text-align: center;
+    font-size: 32px;
+    width:350px;
+    line-height:75px;
+}
+
+.flexButtonLigne1{
+    display: flex;
+    align-items: center;
+    margin: 1%;
+}
+
+.flexButtonLigne2{
+    display: flex;
+    align-items: center;
+    margin: 1%;
+}
