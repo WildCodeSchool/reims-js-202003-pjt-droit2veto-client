@@ -13,17 +13,17 @@ function NavBar() {
     <>
       <nav className="navbarVerticaleBloc">
         <ul>
-          <li>
-            <Link to="/informations">Mes informations</Link>
+          <li className="NavLink">
+            <Link to="/informations" className="LinkLeft">Mes informations</Link>
           </li>
-          <li>
-            <Link to="/anesthesia">Plaquette anesthésie</Link>
+          <li className="NavLink">
+            <Link to="/anesthesia" className="LinkLeft">Plaquette anesthésie</Link>
           </li>
-          <li>
-            <Link to="/activities">Plaquette d'activités</Link>
+          <li className="NavLink">
+            <Link to="/activities" className="LinkLeft">Plaquette d'activités</Link>
           </li>
-          <li>
-            <Link to="/order">Ma commande</Link>
+          <li className="NavLink">
+            <Link to="/order" className="LinkLeft">Ma commande</Link>
           </li>
         </ul>
       </nav>
