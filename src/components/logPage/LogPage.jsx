@@ -28,7 +28,7 @@ const LogPage = () => {
             <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="Numéro ordinal" required />
           </div>
           <p className="logPageFormText">Déjà membre ? Connectez-vous ici</p>
-          <Link className="logPageFormButton" to="/home">
+          <Link className="logPageFormButton" to="/">
             Me connecter
           </Link>
         </form>

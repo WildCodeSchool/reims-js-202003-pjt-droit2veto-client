@@ -7,17 +7,17 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import LogPage from './components/logPage/LogPage';
-import Home from './components/navbar/Home';
+import Home from './components/home/Home';
 
 function App() {
   return (
     <>
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/login">
             <LogPage />
           </Route>
-          <Route path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
