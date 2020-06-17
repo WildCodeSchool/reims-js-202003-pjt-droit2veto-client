@@ -1,18 +1,27 @@
 .formInfo {
     display: flex;
     flex-direction: column;
-    width: 35vw;
-    margin-left: 3vw;
+    width: 45vw;
+    margin: 10vh 25vh 25vh;
+    background-color: white;
+    border-radius: 3%;
 }
 
 .labelInfo {
     display: flex;
     margin-top: 1vw;
     margin-bottom: 1vw;
+    font-size: 4vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
 
 .titleInfo {
     display: flex;
+    font-size: 5vh;
+    justify-content: center;
+    padding: 7vh 0;
+    border-bottom: black solid 1px;
 }
 
 .villeInfo {
@@ -20,12 +29,29 @@
     flex-direction: row;
 }
 
-.codeInfo {
-    margin-left: 6.5vw;
-}
-
 .buttonInfo {
     margin: 3vw 0 3vw 20vw;
 }
 
+.inputInfo {
+    height: 5vh;
+    font-size: 3.5vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.backInfo {
+    /*background: linear-gradient( 249.2deg,#01C3E2 60%, whitesmoke 60%);*/
+    background: linear-gradient(to bottom,#01C3E2, #01C3E2 15%, whitesmoke 15%);
+    width: 65vw;
+}
+
+.buttonValider {
+    height: 10vh;
+    width: 10vw;
+    font-size: 5vh;
+    color: antiquewhite;
+    background-color: #01C3E2;
+    border-radius: 5%;
+}
 

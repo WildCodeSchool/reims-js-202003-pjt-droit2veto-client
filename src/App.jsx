@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/navbar/NavBar';
 import {
   BrowserRouter as
   Router,
@@ -8,6 +7,7 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+import NavBar from './components/navbar/NavBar';
 
 
 import LoremIpsum from './components/test/LoremIpsum';
