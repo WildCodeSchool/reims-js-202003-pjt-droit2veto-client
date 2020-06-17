@@ -7,6 +7,10 @@ import {
   Link,
 } from 'react-router-dom';
 import './navbar.css';
+import profil from '../../icon/profil.png';
+import seringue from '../../icon/seringue.png';
+import maison from '../../icon/maison.png';
+import fiche from '../../icon/fiche.png';
 
 function NavBar() {
   return (
@@ -14,16 +18,20 @@ function NavBar() {
       <nav className="navbarVerticaleBloc">
         <ul>
           <li>
-            <Link to="/informations">Mes informations</Link>
+            <img src={profil} alt="" />
+            <Link className="navbarLink" to="/informations">Mes informations</Link>
           </li>
           <li>
-            <Link to="/anesthesia">Plaquette anesthésie</Link>
+            <img src={seringue} alt="" />
+            <Link className="navbarLink" to="/anesthesia">Plaquette anesthésie</Link>
           </li>
           <li>
-            <Link to="/activities">Plaquette d'activités</Link>
+            <img src={maison} alt="" />
+            <Link className="navbarLink" to="/activities">Plaquette d'activités</Link>
           </li>
           <li>
-            <Link to="/order">Ma commande</Link>
+            <img src={fiche} alt="" />
+            <Link className="navbarLink" to="/order">Ma commande</Link>
           </li>
         </ul>
       </nav>

@@ -1,6 +1,7 @@
 
 
 .navbarHorizontalBloc {
+    color:white;
     position: -webkit-sticky;
     position: sticky;
     top:0px;
@@ -9,14 +10,17 @@
     align-items: baseline;
     justify-content: space-between;
     padding: 1rem;
-    border: solid;
-    border-color: black;
     height: 10vh;
-    background-color: white;
+    background-color: #003366;
 }
 
 .navbarTitle {
     font-size: 2rem;
+    text-decoration: none;
+}
+
+.navbarTitle:visited {
+    color:white;
 }
 
 .navbarPage {
@@ -26,12 +30,34 @@
 .navbarVerticaleBloc {
     position: -webkit-sticky;
     position: sticky;
-    top:14vh;
-    width: 40vw;
+    top:13.4vh;
+    width: 30vw;
     display: flex;
     flex-direction: column;
-    border: solid;
-    border-color: black;
     height: 86vh;
-    background-color: white;
+    background-color: #003366;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.navbarVerticaleBloc img {
+    height: 1.5rem;
+    margin-right: 0.4rem;
+}
+
+.navbarVerticaleBloc ul {
+    margin-top: 0;
+}
+
+.navbarVerticaleBloc ul li {
+    list-style: none;
+    margin-bottom: 5rem;
+}
+
+.navbarLink {
+    text-decoration: none;
+}
+
+.navbarLink:visited {
+    color:white;
 }

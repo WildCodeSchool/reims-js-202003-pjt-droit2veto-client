@@ -1,28 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Activity from './Activity';
 import './ActivityList.css';
 
+const activities = [
+  { id: '1', title: 'cardio', description: 'Lorem Lorem' },
+  { id: '2', title: 'echo', description: 'Lorem Lorem' },
+  { id: '3', title: 'ostéo', description: 'Lorem Lorem' },
+  { id: '4', title: 'radio', description: 'Lorem Lorem' },
+];
+
 function ActivityList() {
-  const tableauActivity = [
-    { id: '1', title: 'orstéo', description: 'ifjzojso' },
-    { id: '2', title: 'orstéo', description: 'ifjzojso' },
-    { id: '3', title: 'orstéo', description: 'ifjzojso' },
-    { id: '4', title: 'orstéo', description: 'ifjzojso' },
-  ];
+  const [purchasedActivities, setPurchasedActivities] = useState([]);
+
   return (
     <div className="allMeActivity">
       <section className="MeActivity">
-        <div>
+        <header>
           <h1>Mes Activités</h1>
           <p>veuillez cocher les Activités de votre établisment (max 20)</p>
-          <button className="ValButMeActivity" onClick={() => console.log('je suis un boutton!')}>
-            Valider
-          </button>
-        </div>
+        </header>
+        <button type="button" className="ValButMeActivity" onClick={() => console.log(purchasedActivities)}>
+          Valider
+        </button>
       </section>
-      <div>
-        <Activity activities={tableauActivity} />
-      </div>
+      {activities.map((activity) => (
+        <Activity
+          activity={activity}
+          toggle={() => {
+            const purchasedIndex = purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id);
+            const isPurchased = (purchasedIndex !== -1);
+            if (isPurchased) {
+              setPurchasedActivities(
+                purchasedActivities.filter((purchasedActivity) => purchasedActivity.id !== activity.id),
+              );
+            }
+            else {
+              setPurchasedActivities(
+                [...purchasedActivities, activity],
+              );
+            }
+          }}
+          initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id) !== -1}
+        />
+      ))}
     </div>
   );
 }
