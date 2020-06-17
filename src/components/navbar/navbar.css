@@ -61,3 +61,7 @@
 .navbarLink:visited {
     color:white;
 }
+
+#navbarDogCat {
+    height: 30vh;
+}
