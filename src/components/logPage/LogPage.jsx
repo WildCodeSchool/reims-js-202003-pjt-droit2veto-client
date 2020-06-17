@@ -8,12 +8,12 @@ const LogPage = () => {
       <section className="logPageLeft">
         <h1 className="logPageTitle">Droit2Veto</h1>
         <div className="logPageTextDiv">
-          <p className="logPageText1">Lorem ipsum dolor sit amet</p>
-          <p className="logPageText2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p className="logPageText1">Bienvenue sur Droit2Veto</p>
+          <p className="logPageText2">L’application web qui vous permet de générer vos propres pdf</p>
         </div>
       </section>
       <section className="logPageRight">
-        <h1 className="logPageText1">Créer votre compte </h1>
+        <h1 className="logPageText3">Créer votre compte </h1>
         <form>
           <div className="logPageFormInputDiv">
             <label htmlFor="email" />

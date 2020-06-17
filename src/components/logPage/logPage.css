@@ -4,9 +4,10 @@
 }
 
 .logPageContainer {
-  background-color: #01C3E2;
-  width: 80vw;
-  height: 80vh;
+  background: no-repeat center/100% url('../../images/borna-bevanda-w12NAMymqnk-unsplash-ConvertImage-output-onlinejpgtools.jpg');
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.7;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -30,31 +31,38 @@
 }
 
 .logPageTitle {
-  font-size: 2rem;
+  font-size: 2.5rem;
   position: absolute;
   top: 2rem;
-  left: 12.4rem;
+  left: 4rem;
+  text-transform: uppercase;
 }
 
 .logPageTextDiv {
-  width: 80%;
+  width: 90%;
 }
 
 .logPageText1 {
-  font-size: 1.8rem;
+  font-size: 2.6rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .logPageText2 {
-  font-size: 1rem;
+  font-size: 2.2rem;
   font-weight: normal;
   margin-bottom: 1rem;
 }
 
+.logPageText3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
 .logPageFormText {
   text-align: center;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.8rem;
 }
 
 .logPageFormInputDiv {
@@ -65,7 +73,7 @@
 }
 
 .logPageFormInput {
-  width: 80%;
+  width: 90%;
   height: 2rem;
   margin-bottom: 1rem;
 }
