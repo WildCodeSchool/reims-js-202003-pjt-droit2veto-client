@@ -42,7 +42,7 @@
 
 .backInfo {
     /*background: linear-gradient( 249.2deg,#01C3E2 60%, whitesmoke 60%);*/
-    background: linear-gradient(to bottom,#01C3E2, #01C3E2 15%, whitesmoke 15%);
+    background: linear-gradient(to bottom,#003366, #003366 15%, whitesmoke 15%);
     width: 65vw;
 }
 
@@ -51,7 +51,7 @@
     width: 10vw;
     font-size: 5vh;
     color: antiquewhite;
-    background-color: #01C3E2;
+    background-color: #003366;
     border-radius: 5%;
 }
 

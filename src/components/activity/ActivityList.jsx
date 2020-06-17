@@ -13,7 +13,8 @@ function ActivityList() {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
 
   return (
-    <div className="allMeActivity">
+    <div className="backActivities">
+      <div className="allMeActivity">
       <section className="MeActivity">
         <header>
           <h1>Mes Activités</h1>
@@ -43,6 +44,7 @@ function ActivityList() {
           initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id) !== -1}
         />
       ))}
+    </div>
     </div>
   );
 }
