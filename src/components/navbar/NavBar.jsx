@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter as
-  Router,
+    Router,
   Switch,
   Route,
   Link,
@@ -11,6 +11,7 @@ import profil from '../../icon/profil.png';
 import seringue from '../../icon/seringue.png';
 import maison from '../../icon/maison.png';
 import fiche from '../../icon/fiche.png';
+import woof from '../../icon/woof.png';
 
 function NavBar() {
   return (
@@ -32,6 +33,9 @@ function NavBar() {
           <li>
             <img src={fiche} alt="" />
             <Link className="navbarLink" to="/order">Ma commande</Link>
+          </li>
+          <li>
+            <img id="navbarDogCat" src={woof} alt="" />
           </li>
         </ul>
       </nav>

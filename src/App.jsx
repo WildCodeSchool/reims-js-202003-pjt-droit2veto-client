@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {
   BrowserRouter as
-  Router,
+    Router,
   Switch,
   Route,
   Link,
@@ -24,24 +24,28 @@ function App() {
           <p>Profil en cours</p>
         </div>
         <div className="navbarPage">
-          <NavBar />
-          <Switch>
-            <Route exact path="/">
-              <BlocTuto />
-            </Route>
-            <Route exact path="/informations">
-              <Information />
-            </Route>
-            <Route excat path="/anesthesia">
-              <LoremIpsum />
-            </Route>
-            <Route exact path="/activities">
-              <ActivityList />
-            </Route>
-            <Route exact path="/order">
-              <LoremIpsum />
-            </Route>
-          </Switch>
+          <div>
+            <NavBar />
+          </div>
+          <div className="appComponentsRouter">
+            <Switch>
+              <Route exact path="/">
+                <BlocTuto />
+              </Route>
+              <Route exact path="/informations">
+                <Information />
+              </Route>
+              <Route excat path="/anesthesia">
+                <LoremIpsum />
+              </Route>
+              <Route exact path="/activities">
+                <ActivityList />
+              </Route>
+              <Route exact path="/order">
+                <LoremIpsum />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </Router>
     </>
