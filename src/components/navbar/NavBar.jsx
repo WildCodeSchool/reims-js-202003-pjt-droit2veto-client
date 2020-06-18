@@ -1,29 +1,41 @@
 import React from 'react';
 import {
   BrowserRouter as
-  Router,
+    Router,
   Switch,
   Route,
   Link,
 } from 'react-router-dom';
 import './navbar.css';
+import profil from '../../icon/profil.png';
+import seringue from '../../icon/seringue.png';
+import maison from '../../icon/maison.png';
+import fiche from '../../icon/fiche.png';
+import woof from '../../icon/woof.png';
 
 function NavBar() {
   return (
     <>
       <nav className="navbarVerticaleBloc">
         <ul>
-          <li className="NavLink">
-            <Link to="/informations" className="LinkLeft">Mes informations</Link>
+          <li>
+            <img src={profil} alt="" />
+            <Link className="navbarLink" to="/informations">Mes informations</Link>
           </li>
-          <li className="NavLink">
-            <Link to="/anesthesia" className="LinkLeft">Plaquette anesthésie</Link>
+          <li>
+            <img src={seringue} alt="" />
+            <Link className="navbarLink" to="/anesthesia">Plaquette anesthésie</Link>
           </li>
-          <li className="NavLink">
-            <Link to="/activities" className="LinkLeft">Plaquette d'activités</Link>
+          <li>
+            <img src={maison} alt="" />
+            <Link className="navbarLink" to="/activities">Plaquette d'activités</Link>
           </li>
-          <li className="NavLink">
-            <Link to="/order" className="LinkLeft">Ma commande</Link>
+          <li>
+            <img src={fiche} alt="" />
+            <Link className="navbarLink" to="/order">Ma commande</Link>
+          </li>
+          <li>
+            <img id="navbarDogCat" src={woof} alt="" />
           </li>
         </ul>
       </nav>

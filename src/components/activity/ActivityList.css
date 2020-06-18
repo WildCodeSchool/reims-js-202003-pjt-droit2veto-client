@@ -1,11 +1,3 @@
-.allMeActivity{
-    border: solid black 2px;
-    border-radius: 8px;
-    margin: 10vh 10vw 10vh 10vw;
-    width: 45vw;
-    background-color: white;
-}
-
 .MeActivity {
     display: flex;
     align-items: baseline;
