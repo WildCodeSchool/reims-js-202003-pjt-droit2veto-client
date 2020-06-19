@@ -9,7 +9,7 @@ import {
 import NavBar from '../navbar/NavBar';
 import '../navbar/navbar.css';
 import LoremIpsum from '../test/LoremIpsum';
-import BlocTuto from '../blocTuto/BlocTuto';
+import BlocTuto from '../bloctuto/BlocTuto';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 

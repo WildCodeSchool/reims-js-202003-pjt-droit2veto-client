@@ -3,12 +3,14 @@
     align-items: baseline;
     justify-content: space-between;
     border: solid 1px black;
+    height: 15vh;
 }
 
 .TitleAndDecri{
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
+    align-self: center;
 }
 
 .switch {
@@ -70,3 +72,8 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.Toogle {
+    margin-top: 5vh;
+}
+
