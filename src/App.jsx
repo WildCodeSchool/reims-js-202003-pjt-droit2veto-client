@@ -13,7 +13,7 @@ import NavBar from './components/navbar/NavBar';
 import LoremIpsum from './components/test/LoremIpsum';
 import BlocTuto from './components/bloctuto/BlocTuto';
 import Information from './components/information/Information';
-import ActivityList from './components/activity/ActivityList';
+import ActivitiesList from './components/activity/ActivitiesList';
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
                 <LoremIpsum />
               </Route>
               <Route exact path="/activities">
-                <ActivityList />
+                <ActivitiesList />
               </Route>
               <Route exact path="/order">
                 <LoremIpsum />
