@@ -1,3 +1,17 @@
+## Project by :
+
+### GILBERT Martin, PANTIEZ Stephaine, LANG Cecyl, NICAISE Julien, MORA Angélique
+
+For use our app :
+
+-clone this repo 
+-npm install 
+-download and install Droit2Veto.sql
+
+## LINKS:
+
+-GitHub Droit2Veto Back : https://github.com/WildCodeSchool/reims-js-202003-pjt-droit2veto
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
