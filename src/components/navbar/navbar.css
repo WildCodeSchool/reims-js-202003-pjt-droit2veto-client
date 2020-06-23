@@ -30,7 +30,7 @@
 .navbarVerticaleBloc {
     position: -webkit-sticky;
     position: sticky;
-    top:13.4vh;
+    top:13vh;
     width: 30vw;
     display: flex;
     flex-direction: column;
