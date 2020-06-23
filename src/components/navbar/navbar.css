@@ -15,8 +15,9 @@
 }
 
 .navbarTitle {
-    font-size: 2rem;
+    font-size: 4rem;
     text-decoration: none;
+    margin-left: 48vw;
 }
 
 .navbarTitle:visited {
@@ -30,11 +31,11 @@
 .navbarVerticaleBloc {
     position: -webkit-sticky;
     position: sticky;
-    top:13.4vh;
+    top:12.6vh;
     width: 30vw;
     display: flex;
     flex-direction: column;
-    height: 86vh;
+    height: 88vh;
     background-color: #003366;
     color: white;
     font-size: 1.5rem;
