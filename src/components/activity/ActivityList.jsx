@@ -13,16 +13,16 @@ function ActivityList() {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
 
   return (
-    <div className="backActivities">
-      <div className="allMeActivity">
-        <section className="MeActivity">
+    <div className="backActivityList">
+      <div className="allActivityList">
+        <section className="TitleActivityList">
           <header>
             <h1>Mes Activités</h1>
             <p>veuillez cocher les Activités de votre établisment (max 20)</p>
           </header>
-          <button type="button" className="ValButMeActivity" onClick={() => console.log(purchasedActivities)}>
+          <button type="button" className="ValButActivityList" onClick={() => console.log(purchasedActivities)}>
             Valider
-        </button>
+          </button>
         </section>
         {activities.map((activity) => (
           <Activity
@@ -34,8 +34,7 @@ function ActivityList() {
                 setPurchasedActivities(
                   purchasedActivities.filter((purchasedActivity) => purchasedActivity.id !== activity.id),
                 );
-              }
-              else {
+              } else {
                 setPurchasedActivities(
                   [...purchasedActivities, activity],
                 );
