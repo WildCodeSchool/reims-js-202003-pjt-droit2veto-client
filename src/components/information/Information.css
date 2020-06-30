@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 45vw;
-    margin: 10vh 25vh 25vh;
     background-color: white;
     border-radius: 3%;
 }
@@ -41,9 +40,9 @@
 }
 
 .backInfo {
-    /*background: linear-gradient( 249.2deg,#01C3E2 60%, whitesmoke 60%);*/
-    background: linear-gradient(to bottom,#003366, #003366 15%, whitesmoke 15%);
-    width: 65vw;
+    background: linear-gradient( 220.2deg,#003d7a 60%, whitesmoke 60%);
+    /*background: linear-gradient(to bottom,#003366, #003366 15%, whitesmoke 15%);*/
+
 }
 
 .buttonValider {
