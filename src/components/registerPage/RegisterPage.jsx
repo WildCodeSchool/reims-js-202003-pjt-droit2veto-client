@@ -34,9 +34,9 @@ const RegisterPage = () => (
             ici
           </Link>
         </p>
-        <Link className="logPageFormButton" to="/">
-          Me connecter
-        </Link>
+        <button className="logPageFormButton">
+          M'enregister
+        </button>
       </form>
     </section>
   </div>
