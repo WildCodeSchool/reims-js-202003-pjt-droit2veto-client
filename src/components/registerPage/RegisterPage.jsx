@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './logPage.css';
 
-const LogPage = () => {
+const RegisterPage = () => {
   return (
     <div className="logPageContainer">
       <section className="logPageLeft">
@@ -37,4 +37,4 @@ const LogPage = () => {
   );
 };
 
-export default LogPage;
+export default RegisterPage;
