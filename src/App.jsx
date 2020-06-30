@@ -7,6 +7,7 @@ import {
   Route,
 } from 'react-router-dom';
 import RegisterPage from './components/registerPage/RegisterPage';
+import LogPage from './components/logPage/LogPage';
 import Home from './components/home/Home';
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
         <Switch>
           <Route exact path="/register">
             <RegisterPage />
+          </Route>
+          <Route exact path="/login">
+            <LogPage />
           </Route>
           <Route exact path="/">
             <Home />
