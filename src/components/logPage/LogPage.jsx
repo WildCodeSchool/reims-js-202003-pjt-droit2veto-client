@@ -1,8 +1,27 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import {
+  BrowserRouter as Router, Route, Switch, Link,
+} from 'react-router-dom';
 import './logPage.css';
+import Axios from 'axios';
+
 
 const LogPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [ordinalNumber, setOrdinalNumber] = useState('');
+
+  function post() {
+    Axios.post('http://localhost:8000/users', {
+      email : email, password : password, ordinal_number: ordinalNumber,
+    })
+      .then(
+        (res) => console.log(res),
+      )
+      .catch(
+        (err) => alert("bad request"),
+      );
+  }
   return (
     <div className="logPageContainer">
       <section className="logPageLeft">
@@ -14,24 +33,29 @@ const LogPage = () => {
       </section>
       <section className="logPageRight">
         <h1 className="logPageText3">Créer votre compte </h1>
-        <form>
+        <form onSubmit={(event) => {
+          post();
+          event.preventDefault();
+        }}
+        >
           <div className="logPageFormInputDiv">
             <label htmlFor="email" />
-            <input className="logPageFormInput" type="email" name="mail" id="email" placeholder="Adresse mail" required />
+            <input className="logPageFormInput" type="email" name="mail" id="email" placeholder="Adresse mail" onChange={(event) => setEmail(event.target.value)} required />
           </div>
           <div className="logPageFormInputDiv">
-            <label htmlFor="name" />
-            <input className="logPageFormInput" type="text" name="name" id="name" placeholder="Nom" required />
+            <label htmlFor="password" />
+            <input className="logPageFormInput" type="password" name="password" id="password" placeholder="Mot de passe" onChange={(event) => setPassword(event.target.value)} required />
           </div>
           <div className="logPageFormInputDiv">
             <label htmlFor="ordinal_number" />
-            <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="Numéro ordinal" required />
+            <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="Numéro ordinal" onChange={(event) => setOrdinalNumber(event.target.value)} required />
           </div>
           <p className="logPageFormText">Déjà membre ? Connectez-vous ici</p>
-          <Link className="logPageFormButton" to="/">
-            Me connecter
-          </Link>
+          <button type="submit">s'inscrire</button>
         </form>
+        <Link className="logPageFormButton">
+          Me connecter
+        </Link>
       </section>
     </div>
   );
