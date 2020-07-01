@@ -25,7 +25,7 @@ const LogPage = () => (
           <input className="logPageFormInput" type="text" name="password" id="password" placeholder="Mot de passe" required />
         </div>
         <p className="logPageFormText">
-          Pas encore inscrit ? Connectez-vous
+          Pas encore inscrit ? Enregistrez vous
           {' '}
           <Link className="logPageLink" to="/register">
             ici
