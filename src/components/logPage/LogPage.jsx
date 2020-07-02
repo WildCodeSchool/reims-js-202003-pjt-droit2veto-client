@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 import {
-  BrowserRouter as Router, Route, Switch, Link,
+  BrowserRouter as Link,
 } from 'react-router-dom';
 import './logPage.css';
 import Axios from 'axios';
+import { connect } from 'react-redux';
+
+const mapStateToProps = (state) => ({
+  token: state.token,
+});
 
 
-
-const LogPage = () => {
+const LogPage = ({dispatch}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [token , setToken] = useState('');
 
   function post() {
     Axios.post('http://localhost:8000/auth/login', {
       email: email, password: password,
     })
       .then(
-        (res) => setToken(res.data.token),
+        (res) => dispatch({
+          type: 'SETTOKEN',
+          newToken: res.data.token,
+        }),
       )
       .catch(
         (err) => alert("bad request"),
@@ -65,4 +71,4 @@ const LogPage = () => {
   )
 };
 
-export default LogPage;
+export default connect(mapStateToProps) (LogPage);
