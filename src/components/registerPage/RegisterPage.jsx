@@ -1,45 +1,65 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router, Route, Switch, Link,
 } from 'react-router-dom';
+import '../logPage/logPage.css';
+import Axios from 'axios';
 
-const RegisterPage = () => (
-  <div className="logPageContainer">
-    <section className="logPageLeft">
-      <h1 className="logPageTitle">Droit2Veto</h1>
-      <div className="logPageTextDiv">
-        <p className="logPageText1">Bienvenue sur Droit2Veto</p>
-        <p className="logPageText2">L’application web qui vous permet de générer vos propres pdf</p>
-      </div>
-    </section>
-    <section className="logPageRight">
-      <h1 className="logPageText3">Créer votre compte </h1>
-      <form>
-        <div className="logPageFormInputDiv">
-          <label htmlFor="email" />
-          <input className="logPageFormInput" type="email" name="mail" id="email" placeholder="Adresse mail" required />
+
+const RegisterPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [ordinalNumber, setOrdinalNumber] = useState('');
+
+  function post() {
+    Axios.post('http://localhost:8000/users', {
+      email : email, password : password, ordinal_number: ordinalNumber,
+    })
+      .then(
+        (res) => console.log(res),
+      )
+      .catch(
+        (err) => alert("bad request"),
+      );
+  }
+  return (
+    <div className="logPageContainer">
+      <section className="logPageLeft">
+        <h1 className="logPageTitle">Droit2Veto</h1>
+        <div className="logPageTextDiv">
+          <p className="logPageText1">Bienvenue sur Droit2Veto</p>
+          <p className="logPageText2">L’application web qui vous permet de générer vos propres pdf</p>
         </div>
-        <div className="logPageFormInputDiv">
-          <label htmlFor="name" />
-          <input className="logPageFormInput" type="text" name="name" id="name" placeholder="Nom" required />
-        </div>
-        <div className="logPageFormInputDiv">
-          <label htmlFor="ordinal_number" />
-          <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="Numéro ordinal" required />
-        </div>
-        <p className="logPageFormText">
-          Déjà membre ? Connectez-vous
-          {' '}
-          <Link className="logPageLink" to="/login">
-            ici
-          </Link>
-        </p>
-        <button className="logPageFormButton">
-          M'enregister
-        </button>
-      </form>
-    </section>
-  </div>
-);
+      </section>
+      <section className="logPageRight">
+        <h1 className="logPageText3">Créer votre compte </h1>
+        <form onSubmit={(event) => {
+          post();
+          event.preventDefault();
+        }}
+        >
+          <div className="logPageFormInputDiv">
+            <label htmlFor="email" />
+            <p>Adresse mail :</p>
+            <input className="logPageFormInput" type="email" name="mail" id="email" placeholder="jean.dupont@boitmail.com" onChange={(event) => setEmail(event.target.value)} required />
+          </div>
+          <div className="logPageFormInputDiv">
+            <label htmlFor="password" />
+            <p>Mot de passe :</p>
+            <input className="logPageFormInput" type="password" name="password" id="password" placeholder="1234" onChange={(event) => setPassword(event.target.value)} required />
+          </div>
+          <div className="logPageFormInputDiv">
+            <label htmlFor="ordinal_number" />
+            <p>Numero Ordinal :</p>
+            <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="548934" maxlength = '6' minLength='6' onChange={(event) => setOrdinalNumber(event.target.value)} required />
+          </div>
+          <p className="logPageFormText">Déjà membre ? Connectez-vous ici</p>
+          <button type="submit">s'inscrire</button>
+        </form>
+      </section>
+    </div>
+  );
+};
 
 export default RegisterPage;

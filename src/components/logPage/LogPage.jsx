@@ -4,6 +4,8 @@ import {
 } from 'react-router-dom';
 import './logPage.css';
 
+
+
 const LogPage = () => (
   <div className="logPageContainer">
     <section className="logPageLeft">
