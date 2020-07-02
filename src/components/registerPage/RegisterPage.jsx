@@ -17,7 +17,7 @@ const RegisterPage = () => {
       email : email, password : password, ordinal_number: ordinalNumber,
     })
       .then(
-        (res) => console.log(res),
+        (res) =>alert("enregistrement reussi"),
       )
       .catch(
         (err) => alert("bad request"),
@@ -54,8 +54,8 @@ const RegisterPage = () => {
             <p>Numero Ordinal :</p>
             <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="548934" maxlength = '6' minLength='6' onChange={(event) => setOrdinalNumber(event.target.value)} required />
           </div>
-          <p className="logPageFormText">Déjà membre ? Connectez-vous ici</p>
-          <button type="submit">s'inscrire</button>
+          <p className="logPageFormText">Déjà membre ? Connectez-vous <Link to="/login" className="logPageLink">ici</Link></p>
+          <button type="submit" className="logPageFormButton" >s'inscrire</button>
         </form>
       </section>
     </div>
