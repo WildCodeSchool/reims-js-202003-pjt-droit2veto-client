@@ -10,7 +10,7 @@ import TokenReducer from './components/redux/TokenReducer';
 
 const store = createStore(
   TokenReducer,
-  window.REDUX_DEVTOOLS_EXTENSION && window.REDUX_DEVTOOLS_EXTENSION()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 
