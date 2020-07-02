@@ -12,18 +12,18 @@ import LoremIpsum from '../test/LoremIpsum';
 import BlocTuto from '../bloctuto/BlocTuto';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
+import ProfilBar from '../profilbar/ProfilBar';
+import './home.css';
+
 
 const Home = () => (
   <Router>
-    <div className="navbarHorizontalBloc">
-      <Link className="navbarTitle" to="/">Droit2Veto</Link>
-      <p>Profil en cours</p>
-    </div>
     <div className="navbarPage">
       <div>
         <NavBar />
       </div>
       <div className="appComponentsRouter">
+        <ProfilBar />
         <Switch>
           <Route exact path="/">
             <BlocTuto />

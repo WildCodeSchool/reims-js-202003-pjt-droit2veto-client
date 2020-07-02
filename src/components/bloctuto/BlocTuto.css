@@ -32,7 +32,6 @@
 .flexButtonLigne1{
     display: flex;
     align-items: center;
-    margin-top: 25vh;
 }
 
 .flexButtonLigne2{
@@ -40,6 +39,3 @@
     align-items: center;
 }
 
-.choixPage {
-    background: linear-gradient(to bottom,#003366, #003366 25%, whitesmoke 25%);
-}
