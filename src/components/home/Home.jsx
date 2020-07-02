@@ -6,6 +6,7 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+import { connect } from 'react-redux';
 import NavBar from '../navbar/NavBar';
 import '../navbar/navbar.css';
 import LoremIpsum from '../test/LoremIpsum';
@@ -14,15 +15,12 @@ import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ProfilBar from '../profilbar/ProfilBar';
 import './home.css';
-import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
   token: state,
 });
-const Home = ({ token, dispatch }) => {
+const Home = ({ token, dispatch }) => (
 
-
-  return (
     <Router>
       <div className="navbarHorizontalBloc">
         <Link className="navbarTitle" to="/">Droit2Veto</Link>
@@ -53,7 +51,7 @@ const Home = ({ token, dispatch }) => {
         </div>
       </div>
     </Router>
-  )
-};
+  </>
+);
 
 export default connect(mapStateToProps)(Home);
