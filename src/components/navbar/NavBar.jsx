@@ -17,6 +17,9 @@ function NavBar() {
   return (
     <>
       <nav className="navbarVerticaleBloc">
+        <div>
+          <Link className="navbarTitle" to="/">Droit2Veto</Link>
+        </div>
         <ul>
           <li>
             <img src={profil} alt="" />
@@ -39,6 +42,7 @@ function NavBar() {
           </li>
         </ul>
       </nav>
+
     </>
   );
 }
