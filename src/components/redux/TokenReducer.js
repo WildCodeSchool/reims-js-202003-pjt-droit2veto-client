@@ -1,13 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
 
-const TokenReducer = (state = null, action) => {
-  if (action.type === 'GETTOKEN') {
-    return (
-      state = action.text
-    );
+const TokenReducer = (state = { token: null }, action) => {
+  switch (action.type) {
+    case 'SETTOKEN':
+      // nouveau State
+      return { token: action.newToken };
+    default:
+      return state;
   }
-  return (state);
 };
 
 
