@@ -6,6 +6,7 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+import { connect } from 'react-redux';
 import NavBar from '../navbar/NavBar';
 import '../navbar/navbar.css';
 import LoremIpsum from '../test/LoremIpsum';
@@ -15,35 +16,42 @@ import ActivityList from '../activity/ActivityList';
 import ProfilBar from '../profilbar/ProfilBar';
 import './home.css';
 
+const mapStateToProps = (state) => ({
+  token: state,
+});
+const Home = ({ token, dispatch }) => (
 
-const Home = () => (
-  <Router>
-    <div className="navbarPage">
-      <div>
-        <NavBar />
+    <Router>
+      <div className="navbarHorizontalBloc">
+        <Link className="navbarTitle" to="/">Droit2Veto</Link>
+        <p>Profil en cours</p>
       </div>
-      <div className="appComponentsRouter">
-        <ProfilBar />
-        <Switch>
-          <Route exact path="/">
-            <BlocTuto />
-          </Route>
-          <Route exact path="/informations">
-            <Information />
-          </Route>
-          <Route exact path="/anesthesia">
-            <LoremIpsum />
-          </Route>
-          <Route exact path="/activities">
-            <ActivityList />
-          </Route>
-          <Route exact path="/order">
-            <LoremIpsum />
-          </Route>
-        </Switch>
+      <div className="navbarPage">
+        <div>
+          <NavBar />
+        </div>
+        <div className="appComponentsRouter">
+          <Switch>
+            <Route exact path="/">
+              <BlocTuto />
+            </Route>
+            <Route exact path="/informations">
+              <Information />
+            </Route>
+            <Route exact path="/anesthesia">
+              <LoremIpsum />
+            </Route>
+            <Route exact path="/activities">
+              <ActivityList />
+            </Route>
+            <Route exact path="/order">
+              <LoremIpsum />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
-  </Router>
+    </Router>
+  </>
 );
 
-export default Home;
+export default connect(mapStateToProps)(Home);

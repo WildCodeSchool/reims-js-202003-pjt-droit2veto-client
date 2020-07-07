@@ -21,9 +21,7 @@ function App() {
           <Route exact path="/login">
             <LogPage />
           </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Route component={Home} exact path="/" />
         </Switch>
       </Router>
     </>
