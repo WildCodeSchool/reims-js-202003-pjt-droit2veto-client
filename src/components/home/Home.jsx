@@ -22,8 +22,6 @@ const mapStateToProps = (state) => ({
   token: state.token,
 });
 
-
-
 const Home = ({ token, history }) => {
 
   useEffect(() => {

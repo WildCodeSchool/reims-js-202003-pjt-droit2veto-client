@@ -13,14 +13,17 @@ function ActivityList({ id }) {
   const [allActivities, setAllActivities] = useState([]);
 
   useEffect(() => {
-    Axios.get('http://localhost:8000/activities')
+    Axios.get(`http://localhost:8000/usersactivities/${id}/activities`)
       .then((res) => res.data)
       .then((data) => {
-        setAllActivities(data);
+        setPurchasedActivities(data);
+        Axios.get('http://localhost:8000/activities')
+          .then((res) => res.data)
+          .then((data) => {
+            setAllActivities(data);
+          });
       });
-    //Axios.get(`http:/localhost:8000/${id}/activities`)
-      console.log(id);
-  }, [id]);
+  }, []);
 
   return (
     <div className="backActivityList">
@@ -50,7 +53,7 @@ function ActivityList({ id }) {
                 );
               }
             }}
-            initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id) !== -1}
+            initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.Activities_id === activity.id) !== -1}
           />
         ))}
       </div>
