@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  BrowserRouter as Link,
+  BrowserRouter as Router, Route, Switch, Link,
 } from 'react-router-dom';
 import './logPage.css';
 import Axios from 'axios';
@@ -11,22 +11,25 @@ const mapStateToProps = (state) => ({
 });
 
 
-const LogPage = ({dispatch}) => {
+const LogPage = ({ dispatch, history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   function post() {
     Axios.post('http://localhost:8000/auth/login', {
-      email: email, password: password,
+      email, password,
     })
       .then(
-        (res) => dispatch({
-          type: 'SETTOKEN',
-          newToken: res.data.token,
-        }),
-      )
+        (res) => {
+          dispatch({
+            type: 'SETTOKEN',
+            newToken: res.data.token,
+            newId: res.data.user.id,
+          });
+          history.push('/');
+        })
       .catch(
-        (err) => alert("bad request"),
+        (err) => alert('bad request'),
       );
   }
 
@@ -49,26 +52,26 @@ const LogPage = ({dispatch}) => {
         >
           <div className="logPageFormInputDiv">
             <label htmlFor="email" />
-            <input className="logPageFormInput" type="email" name="mail" id="email" placeholder="Adresse mail" onChange={(event) => setEmail(event.target.value)} required />
+            <input className="logPageFormInput" type="email" name="mail" id="email" placeholder="jean.dupont@boitmail.com" onChange={(event) => setEmail(event.target.value)} required />
           </div>
           <div className="logPageFormInputDiv">
             <label htmlFor="password" />
-            <input className="logPageFormInput" type="text" name="password" id="password" placeholder="Mot de passe" onChange={(event) => setPassword(event.target.value)} required />
+            <input className="logPageFormInput" type="password" name="password" id="password" placeholder="1234" onChange={(event) => setPassword(event.target.value)} required />
           </div>
           <p className="logPageFormText">
             Pas encore inscrit ? Enregistrez vous
-          {' '}
-            <Link className="logPageLink" to="/register">
+            {' '}
+            <Link to="/register" className="logPageLink">
               ici
-          </Link>
+            </Link>
           </p>
-          <button className="logPageFormButton">
+          <button className="logPageFormButton" >
             Me connecter
-        </button>
+          </button>
         </form>
       </section>
     </div>
-  )
+  );
 };
 
-export default connect(mapStateToProps) (LogPage);
+export default connect(mapStateToProps)(LogPage);
