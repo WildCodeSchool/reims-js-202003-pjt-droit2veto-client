@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import {
   BrowserRouter as
-  Router,
+    Router,
   Switch,
   Route,
   Link,
@@ -14,13 +14,25 @@ import BlocTuto from '../bloctuto/BlocTuto';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ProfilBar from '../profilbar/ProfilBar';
+// import LogOut from './LogOut';
 import './home.css';
 
-const mapStateToProps = (state) => ({
-  token: state,
-});
-const Home = ({ token, dispatch }) => (
 
+const mapStateToProps = (state) => ({
+  token: state.token,
+});
+
+
+
+const Home = ({ token, dispatch, history }) => {
+
+  useEffect(() => {
+    if (token === null) {
+      history.push('/register');
+    }
+  });
+
+  return (
     <Router>
       <div className="navbarHorizontalBloc">
         <Link className="navbarTitle" to="/">Droit2Veto</Link>
@@ -51,7 +63,7 @@ const Home = ({ token, dispatch }) => (
         </div>
       </div>
     </Router>
-  </>
-);
+  );
+};
 
 export default connect(mapStateToProps)(Home);
