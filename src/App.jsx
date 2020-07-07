@@ -18,12 +18,8 @@ function App() {
           <Route exact path="/register">
             <RegisterPage />
           </Route>
-          <Route exact path="/login">
-            <LogPage />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Route component={LogPage} exact path="/login" />
+          <Route component={Home} exact path="/" />
         </Switch>
       </Router>
     </>
