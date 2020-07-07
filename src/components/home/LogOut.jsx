@@ -7,13 +7,14 @@ const mapStateToProps = (state) => ({
 
 function LogOut({ dispatch }) {
   return (
-    <button onClick={() => (dispatch({
-      type: 'LOGOUT',
-      token: null,
-      id: null,
-    }))}
+    <button
+      type="button"
+      onClick={() => (dispatch({
+        type: 'LOGOUT',
+        token: null,
+        id: null,
+      }))}
     >
-      {' '}
       Deconnetion
     </button>
   );
