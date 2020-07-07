@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import Activity from './Activity';
 import './ActivityList.css';
+import { connect } from 'react-redux';
 
-function ActivityList() {
+const mapStateToProps = (state) => ({
+  id: state.id,
+});
+
+function ActivityList({ id }) {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
 
@@ -12,9 +17,10 @@ function ActivityList() {
       .then((res) => res.data)
       .then((data) => {
         setAllActivities(data);
-        console.log(data);
       });
-  });
+    //Axios.get(`http:/localhost:8000/${id}/activities`)
+      console.log(id);
+  }, [id]);
 
   return (
     <div className="backActivityList">
@@ -51,4 +57,4 @@ function ActivityList() {
     </div>
   );
 }
-export default ActivityList;
+export default connect(mapStateToProps)(ActivityList);
