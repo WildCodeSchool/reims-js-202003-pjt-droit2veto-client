@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 function ActivityList({ id }) {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
+  const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/users/${id}/activities`)
@@ -22,6 +23,7 @@ function ActivityList({ id }) {
           .then((data) => {
             setAllActivities(data);
           });
+        Axios.get(`http;//localhost:8000/user/${id}`).then((res) => setAdmin(res.data.administrator));
       });
   }, []);
 
@@ -33,6 +35,8 @@ function ActivityList({ id }) {
             <h1>Mes Activités</h1>
             <p>Veuillez cocher les Activités de votre établisment (20 activités maximum)</p>
           </header>
+          {admin == null
+          && <button>Admin</button>}
           <button type="button" className="ValButActivityList" onClick={() => console.log(purchasedActivities)}>
             Valider
           </button>
