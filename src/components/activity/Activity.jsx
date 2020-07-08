@@ -8,7 +8,7 @@ function Activity({ activity, toggle, initialChecked, userId }) {
   const [checked, setChecked] = useState(initialChecked);
 
   const addActivity = () => {
-    Axios.post('http://localhost:8000/users/activities', { DVM_id: userId, Activities_id: activity.id })
+    Axios.post(`http://localhost:8000/users/${userId}/activities`, { DVM_id: userId, Activities_id: activity.id })
       .then((res) => res.data);
   };
 
