@@ -1,41 +1,46 @@
 .ButtonLink{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-
 }
+
 .paraButton{
     text-align: center;
-    font-size: 2vh;
-    width: 90%;
+    font-size: 1.5rem;
+    width: 25vw;
 }
+
 .tutoButton {
-    color: antiquewhite;
+    color: white;
     background-color: #003366;
-    border-radius: 5%;
+    border-radius: 15px;
     border: none;
-    font-size: 5vh;
-    padding: 3%;
-    width: 80%;
-    height: 15vh;
+    font-size: 2.5rem;
+    width: 25vw;
+    height: 25vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    margin: 1.8vh;
 }
 
 .tutoButton:hover {
-    text-decoration: underline;
+    color: #003366;
+    background-color: white;
+    border: solid 1px #003366;
 }
 
-.flexButtonLigne1{
+.flexButton {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-top: 20vh;
 }
 
-.flexButtonLigne2{
-    display: flex;
-    align-items: center;
+.blocTutoWelcome {
+    font-size: 3rem;
+    color: #003366;
+    text-align: center;
 }
-
