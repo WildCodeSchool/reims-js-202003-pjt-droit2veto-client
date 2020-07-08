@@ -1,20 +1,10 @@
-.navbarHorizontalBloc {
-    color:white;
-    position: -webkit-sticky;
-    position: sticky;
-    top:0px;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-    padding: 1rem;
-    height: 10vh;
-    background-color: #003366;
-}
-
 .navbarTitle {
-    font-size: 4rem;
+    font-size: 3rem;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-weight: bold;
 }
 
 .navbarTitle:visited {
@@ -26,12 +16,7 @@
 }
 
 .navbarVerticaleBloc {
-    position: -webkit-sticky;
-    position: sticky;
-    top:0;
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
+    width: 18vw;
     height: 100vh;
     background-color: #003366;
     color: white;
@@ -44,7 +29,7 @@
 }
 
 .navbarVerticaleBloc ul {
-    margin-top: 0;
+    margin-top: 10vh;
 }
 
 .navbarVerticaleBloc ul li {
@@ -60,6 +45,8 @@
     color:white;
 }
 
-#navbarDogCat {
-    height: 30vh;
+#navbarPaw{
+    height: 15vh;
+    position: absolute;
+    bottom: 2rem;
 }
