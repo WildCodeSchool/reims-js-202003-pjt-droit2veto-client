@@ -48,27 +48,27 @@ function Information({ id }) {
             <label htmlFor="etablissement" className="labelInfo">
               Nom de l'établissement
           </label>
-            <input type="text" name="etablissement" id="etablissement" className="inputInfo" />
+            <input type="text" name="etablissement" id="etablissement" className="inputInfo" value={user.establishment_name } />
             <label htmlFor="adresse" className="labelInfo">
               Adresse de l'établissement 1
           </label>
-            <input type="text" name="adresse" id="adresse" className="inputInfo" />
+            <input type="text" name="adresse" id="adresse" className="inputInfo" value={user.address_of_establishment_1} />
             <label className="labelInfo">
               Adresse de l'établissement 2
           </label>
-            <input type="text" className="inputInfo" />
+            <input type="text" className="inputInfo" value={user.address_of_establishment_2} />
             <div className="villeInfo">
               <div>
                 <label htmlFor="ville" className="labelInfo">
                   Ville
               </label>
-                <input type="text" name="ville" id="ville" className="inputInfo" />
+                <input type="text" name="ville" id="ville" className="inputInfo" value={user.city} />
               </div>
               <div className="codeInfo">
                 <label htmlFor="code" className="labelInfo">
                   Code postal
               </label>
-                <input type="text" name="code" id="code" className="inputInfo" />
+                <input type="text" name="code" id="code" className="inputInfo" value={user.postal_code} />
               </div>
             </div>
             <label htmlFor="pays" className="labelInfo">
@@ -78,15 +78,15 @@ function Information({ id }) {
             <label htmlFor="tel" className="labelInfo">
               Téléphone fixe de l'établissement
           </label>
-            <input type="text" name="tel" id="tel" className="inputInfo" />
+            <input type="text" name="tel" id="tel" className="inputInfo" value={user.telephone_of_the_establishment} />
             <label htmlFor="telPerso" className="labelInfo">
               Téléphone personnel
           </label>
-            <input type="text" name="telPerso" id="telPerso" className="inputInfo" />
+            <input type="text" name="telPerso" id="telPerso" className="inputInfo" value={user.personal_phone} />
             <label className="labelInfo">
               Logo
           </label>
-            <input type="file" className="inputInfo" />
+            <input type="file" className="inputInfo" value={user.logo} />
             <div className="buttonInfo">
               <button type="submit" className="buttonValider">Valider</button>
             </div>
