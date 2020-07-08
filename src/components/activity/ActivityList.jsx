@@ -13,7 +13,7 @@ function ActivityList({ id }) {
   const [allActivities, setAllActivities] = useState([]);
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/usersactivities/${id}/activities`)
+    Axios.get(`http://localhost:8000/users/${id}/activities`)
       .then((res) => res.data)
       .then((data) => {
         setPurchasedActivities(data);
