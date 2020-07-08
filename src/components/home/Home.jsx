@@ -15,6 +15,7 @@ import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ProfilBar from '../profilbar/ProfilBar';
 import LogOut from './LogOut';
+import ManageActivities from '../activity/ManageActivities';
 import './home.css';
 
 
@@ -26,7 +27,7 @@ const Home = ({ token, history }) => {
 
   useEffect(() => {
     if (token === null) {
-      history.push('/register');
+      history.push('/login');
     }
   });
 
@@ -54,6 +55,9 @@ const Home = ({ token, history }) => {
             </Route>
             <Route exact path="/activities">
               <ActivityList />
+            </Route>
+            <Route exact path="/manageactivities">
+              <ManageActivities />
             </Route>
             <Route exact path="/order">
               <LoremIpsum />
