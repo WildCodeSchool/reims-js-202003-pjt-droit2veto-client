@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import Activity from './Activity';
+import {
+  BrowserRouter as
+    Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 import './ActivityList.css';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
   id: state.id,
+  admin: state.admin,
 });
 
-function ActivityList({ id }) {
+function ActivityList({ id, admin, history }) {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
 
@@ -33,7 +41,9 @@ function ActivityList({ id }) {
             <h1>Mes Activités</h1>
             <p>Veuillez cocher les Activités de votre établisment (20 activités maximum)</p>
           </header>
-          <button type="button" className="ValButActivityList" onClick={() => console.log('hello')}>
+          {admin !== null
+          && <Link to="/manageactivities">Admin</Link>}
+          <button type="button" className="ValButActivityList" onClick={() => console.log(purchasedActivities)}>
             Valider
           </button>
         </section>
