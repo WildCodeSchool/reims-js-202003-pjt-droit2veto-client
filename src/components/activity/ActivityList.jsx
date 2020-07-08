@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios';
 import Activity from './Activity';
 import './ActivityList.css';
+import { connect } from 'react-redux';
 
-const activities = [
-  { id: '1', title: 'cardio', description: 'Lorem Lorem' },
-  { id: '2', title: 'echo', description: 'Lorem Lorem' },
-  { id: '3', title: 'ostéo', description: 'Lorem Lorem' },
-  { id: '4', title: 'radio', description: 'Lorem Lorem' },
-];
+const mapStateToProps = (state) => ({
+  id: state.id,
+});
 
-function ActivityList() {
+function ActivityList({ id }) {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
+  const [allActivities, setAllActivities] = useState([]);
+
+  useEffect(() => {
+    Axios.get(`http://localhost:8000/users/${id}/activities`)
+      .then((res) => res.data)
+      .then((data) => {
+        setPurchasedActivities(data);
+        Axios.get('http://localhost:8000/activities')
+          .then((res) => res.data)
+          .then((data) => {
+            setAllActivities(data);
+          });
+      });
+  }, []);
 
   return (
     <div className="backActivityList">
@@ -18,13 +31,13 @@ function ActivityList() {
         <section className="TitleActivityList">
           <header>
             <h1>Mes Activités</h1>
-            <p>veuillez cocher les Activités de votre établisment (max 20)</p>
+            <p>Veuillez cocher les Activités de votre établisment (20 activités maximum)</p>
           </header>
           <button type="button" className="ValButActivityList" onClick={() => console.log(purchasedActivities)}>
             Valider
           </button>
         </section>
-        {activities.map((activity) => (
+        {allActivities.map((activity) => (
           <Activity
             activity={activity}
             toggle={() => {
@@ -40,11 +53,11 @@ function ActivityList() {
                 );
               }
             }}
-            initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id) !== -1}
+            initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.Activities_id === activity.id) !== -1}
           />
         ))}
       </div>
     </div>
   );
 }
-export default ActivityList;
+export default connect(mapStateToProps)(ActivityList);

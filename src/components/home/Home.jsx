@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import NavBar from '../navbar/NavBar';
 import '../navbar/navbar.css';
 import LoremIpsum from '../test/LoremIpsum';
-import BlocTuto from '../bloctuto/BlocTuto';
+import BlocTuto from '../blocTuto/BlocTuto';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ProfilBar from '../profilbar/ProfilBar';
@@ -21,8 +21,6 @@ import './home.css';
 const mapStateToProps = (state) => ({
   token: state.token,
 });
-
-
 
 const Home = ({ token, history }) => {
 
