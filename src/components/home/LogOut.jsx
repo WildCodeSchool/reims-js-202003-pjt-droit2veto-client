@@ -14,8 +14,9 @@ function LogOut({ dispatch }) {
         token: null,
         id: null,
       }))}
+      className="logoutButton"
     >
-      Deconnetion
+      Déconnexion
     </button>
   );
 }
