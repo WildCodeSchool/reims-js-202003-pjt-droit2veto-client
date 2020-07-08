@@ -15,6 +15,7 @@ import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ProfilBar from '../profilbar/ProfilBar';
 import LogOut from './LogOut';
+import Admin from '../activity/Admin';
 import './home.css';
 
 
@@ -54,6 +55,9 @@ const Home = ({ token, history }) => {
             </Route>
             <Route exact path="/activities">
               <ActivityList />
+            </Route>
+            <Route exact path="/admin">
+              <Admin />
             </Route>
             <Route exact path="/order">
               <LoremIpsum />
