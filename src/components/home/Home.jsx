@@ -14,7 +14,7 @@ import BlocTuto from '../bloctuto/BlocTuto';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ProfilBar from '../profilbar/ProfilBar';
-// import LogOut from './LogOut';
+import LogOut from './LogOut';
 import './home.css';
 
 
@@ -24,7 +24,7 @@ const mapStateToProps = (state) => ({
 
 
 
-const Home = ({ token, dispatch, history }) => {
+const Home = ({ token, history }) => {
 
   useEffect(() => {
     if (token === null) {
@@ -37,6 +37,7 @@ const Home = ({ token, dispatch, history }) => {
       <div className="navbarHorizontalBloc">
         <Link className="navbarTitle" to="/">Droit2Veto</Link>
         <p>Profil en cours</p>
+        <LogOut />
       </div>
       <div className="navbarPage">
         <div>
