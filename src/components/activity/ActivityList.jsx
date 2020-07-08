@@ -42,7 +42,7 @@ function ActivityList({ id, admin, history }) {
             <p>Veuillez cocher les Activités de votre établisment (20 activités maximum)</p>
           </header>
           {admin !== null
-          && <Link to="/Admin">Admin</Link>}
+          && <Link to="/manageactivities">Admin</Link>}
           <button type="button" className="ValButActivityList" onClick={() => console.log(purchasedActivities)}>
             Valider
           </button>
