@@ -36,10 +36,10 @@ function ActivityList({ id, admin, history }) {
   return (
     <div className="backActivityList">
       <div className="allActivityList">
-        <section className="TitleActivityList">
-          <header>
+        <section>
+          <header className="TitleActivityList">
             <h1>Mes Activités</h1>
-            <p>Veuillez cocher les Activités de votre établisment (20 activités maximum)</p>
+            <p>Veuillez cocher les activités de votre établissement (20 activités maximum)</p>
           </header>
           {admin !== null
           && <Link to="/manageactivities">Admin</Link>}
