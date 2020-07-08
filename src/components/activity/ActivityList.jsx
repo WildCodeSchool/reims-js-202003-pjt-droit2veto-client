@@ -33,13 +33,14 @@ function ActivityList({ id }) {
             <h1>Mes Activités</h1>
             <p>Veuillez cocher les Activités de votre établisment (20 activités maximum)</p>
           </header>
-          <button type="button" className="ValButActivityList" onClick={() => console.log(purchasedActivities)}>
+          <button type="button" className="ValButActivityList" onClick={() => console.log('hello')}>
             Valider
           </button>
         </section>
         {allActivities.map((activity) => (
           <Activity
             activity={activity}
+            userId={id}
             toggle={() => {
               const purchasedIndex = purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id);
               const isPurchased = (purchasedIndex !== -1);

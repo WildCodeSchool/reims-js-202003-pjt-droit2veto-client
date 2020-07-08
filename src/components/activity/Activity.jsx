@@ -1,10 +1,21 @@
 
 import React, { useState } from 'react';
+import Axios from 'axios';
 import './Activity.css';
 
 
-function Activity({ activity, toggle, initialChecked }) {
+function Activity({ activity, toggle, initialChecked, userId }) {
   const [checked, setChecked] = useState(initialChecked);
+
+  const addActivity = () => {
+    Axios.post('http://localhost:8000/users/activities', { DVM_id: userId, Activities_id: activity.id })
+      .then((res) => res.data);
+  };
+
+  const deleteActivity = () => {
+    Axios.delete(`http://localhost:8000/users/${userId}/activities/${activity.id}`, { DVM_id: userId, Activities_id: activity.id })
+      .then((res) => res.data);
+  };
 
   return (
     <section className="unActivity">
@@ -22,6 +33,7 @@ function Activity({ activity, toggle, initialChecked }) {
             onChange={() => {
               toggle();
               setChecked((previousChecked) => !previousChecked);
+              {checked ? deleteActivity() : addActivity()};
             }}
             checked={checked}
           />
