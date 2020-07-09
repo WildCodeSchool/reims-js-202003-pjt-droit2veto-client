@@ -12,6 +12,7 @@ import '../navbar/navbar.css';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ManageActivities from '../activity/ManageActivities';
+import BlocTuto from '../bloctuto/BlocTuto';
 import './home.css';
 
 
