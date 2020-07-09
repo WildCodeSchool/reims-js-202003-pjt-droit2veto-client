@@ -50,6 +50,7 @@ function ActivityList({ id, admin, history }) {
         {allActivities.map((activity) => (
           <Activity
             activity={activity}
+            userId={id}
             toggle={() => {
               const purchasedIndex = purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id);
               const isPurchased = (purchasedIndex !== -1);
