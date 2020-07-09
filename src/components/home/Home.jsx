@@ -24,7 +24,7 @@ const Home = ({ token, history }) => {
 
   useEffect(() => {
     if (token === null) {
-      // history.push('/login');
+      history.push('/login');
     }
   });
 
