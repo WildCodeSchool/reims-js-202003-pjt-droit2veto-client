@@ -1,24 +1,31 @@
 .titreManageAdmin{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45vw;
+    font-size: 4vh;
+    color: #003366;
+    margin-left: 4vw;
 }
 
 .ListeActivitiesAdmin{
     display: flex;
     align-items:center;
     justify-content: space-between;
-    height: 15vh;
+    height: 10vh;
     font-size: 2.5vh;
 }
+
 .AdminTitleAndDiscription{
-    display: inline;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-left: 3vw;
 }
 
 .ButtonSupManageadmin{
     background-color: #003366;
     color: white;
+    border: none;
+    height: 3vh;
+    font-size: 2vh;
+    cursor: pointer;
 }
 
 .AdminTitle{
@@ -34,10 +41,11 @@
     align-items: center;
     justify-content: space-between;
     padding-left: 1rem;
+    margin-left: 3vw;
 }
 
-.AdminValidationLabelButton{
-    background-color: #003366;
-    color: white;
-    padding: 0.5rem;
+.adminFormInput {
+    width: 20vw;
+    height: 3vh;
+    margin-bottom: 2vh;
 }

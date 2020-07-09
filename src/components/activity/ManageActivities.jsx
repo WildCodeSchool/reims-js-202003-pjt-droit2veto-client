@@ -44,28 +44,29 @@ const ManageActivities = ({ admin, history }) => {
     }}
     >
       <>
-        <h1 className="titreManageAdmin">Zone Adminitration :</h1>
+        <h1 className="titreManageAdmin">Zone Administration</h1>
         <div className="AdminLabel">
           <div>
             <label htmlFor="Title" />
             <p>Titre de l'activité :</p>
-            <input className="logPageFormInput" type="title" name="title" id="title" placeholder="" onChange={(event) => setTitle(event.target.value)} required />
+            <input className="adminFormInput" type="title" name="title" id="title" placeholder="" onChange={(event) => setTitle(event.target.value)} required />
           </div>
           <div>
             <label htmlFor="description" />
             <p>Description de l'activité :</p>
-            <input className="logPageFormInput" type="text" name="text" id="text" placeholder="" onChange={(event) => setDescription(event.target.value)} required />
+            <input className="adminFormInput" type="text" name="text" id="text" placeholder="" onChange={(event) => setDescription(event.target.value)} required />
           </div>
-          <button type="submit" className="AdminValidationLabelButton">valider</button>
+          <button type="submit" className="ValButActivityList">Valider</button>
         </div>
         {allActivities.map((activity) => (
           <section className="ListeActivitiesAdmin">
             <div className="AdminTitleAndDiscription">
-              <h1 className="AdminTitle">
-                {activity.title}
-                :
-              </h1>
-              <p className="AdminDiscription">{activity.description}</p>
+              <details className="DetailActivity">
+                <summary className="TitleActivity" className="AdminTitle">
+                  {activity.title}
+                </summary>
+                <p className="AdminDiscription">{activity.description}</p>
+              </details>
             </div>
             <button
               type="button"
