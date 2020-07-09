@@ -9,7 +9,7 @@ import {
 import { connect } from 'react-redux';
 import NavBar from '../navbar/NavBar';
 import '../navbar/navbar.css';
-import BlocTuto from '../blocTuto/BlocTuto';
+import BlocTuto from '../bloctuto/BlocTuto';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ManageActivities from '../activity/ManageActivities';
@@ -21,7 +21,6 @@ const mapStateToProps = (state) => ({
 });
 
 const Home = ({ token, history }) => {
-
   useEffect(() => {
     if (token === null) {
       history.push('/login');
@@ -45,9 +44,7 @@ const Home = ({ token, history }) => {
             <Route exact path="/activities">
               <ActivityList />
             </Route>
-            <Route exact path="/manageactivities">
-              <ManageActivities />
-            </Route>
+            <Route component={ManageActivities} exact path="/manageactivities" />
           </Switch>
         </div>
       </div>
