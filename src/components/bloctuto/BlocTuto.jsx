@@ -11,7 +11,7 @@ function BlocTuto() {
 
         <div className="ButtonLink">
           <Link to="/informations" className="tutoButton">Mes informations</Link>
-          <p className="paraButton">Mettez à jour vos informations</p>
+          <p className="paraButton">Consulter vos informations personnelles</p>
         </div>
 
         <div className="ButtonLink">
