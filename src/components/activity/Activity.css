@@ -2,8 +2,9 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    border: solid 1px black;
-    height: 15vh;
+    border-bottom: solid 1px #003366;
+    height: 10vh;
+    margin-left: 3vw;
 }
 
 .TitleAndDecri{
@@ -11,6 +12,7 @@
     justify-content: flex-start;
     align-items: baseline;
     align-self: center;
+    font-size: 2vh;
 }
 
 .switch {
@@ -25,7 +27,6 @@
     width: 0;
     height: 0;
 }
-  
 
 .slider {
     position: absolute;
@@ -77,3 +78,30 @@ input:checked + .slider:before {
     margin-top: 5vh;
 }
 
+details summary { 
+    list-style-type: none; 
+}
+
+details summary::-webkit-details-marker { 
+    display: none; 
+}
+
+details summary::marker { 
+    display: none; 
+}
+ 
+ summary:after {
+    content: "+";
+    color: #003366;
+    float: left;
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin: -5px 5px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 20px;
+ }
+ 
+ details[open] summary:after {
+    content: "-";
+ }
