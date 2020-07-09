@@ -26,10 +26,10 @@
 }
 
 .logPageTitle {
-  font-size: 2.5rem;
+  font-size: 5vh;
   position: absolute;
-  top: 2rem;
-  left: 4rem;
+  top: 3vh;
+  left: 7vw;
   text-transform: uppercase;
 }
 
@@ -38,26 +38,26 @@
 }
 
 .logPageText1 {
-  font-size: 2.6rem;
+  font-size: 5vh;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2vh;
 }
 
 .logPageText2 {
-  font-size: 2.2rem;
+  font-size: 4vh;
   font-weight: normal;
-  margin-bottom: 1rem;
+  margin-bottom: 2vh;
 }
 
 .logPageText3 {
-  font-size: 2.4rem;
+  font-size: 5vh;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2vh;
 }
 
 .logPageFormText {
   text-align: center;
-  margin-bottom: 1.8rem;
+  margin-bottom: 3vh;
 }
 
 .logPageFormInputDiv {
@@ -69,18 +69,23 @@
 
 .logPageFormInput {
   width: 90%;
-  height: 2rem;
-  margin-bottom: 1rem;
+  height: 4vh;
+  margin-bottom: 2vh;
+}
+
+.logPageLabel {
+  margin-bottom: 1vh;
 }
 
 .logPageFormButton {
   width: 50%;
-  height: 2rem;
+  height: 4vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.8vh;
 }
 
 .logPageFormButtonDiv {

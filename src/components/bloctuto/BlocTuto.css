@@ -7,7 +7,7 @@
 
 .paraButton{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 3vh;
     width: 25vw;
 }
 
@@ -16,7 +16,7 @@
     background-color: #003366;
     border-radius: 15px;
     border: none;
-    font-size: 2.5rem;
+    font-size: 4.5vh;
     width: 25vw;
     height: 25vh;
     display: flex;
@@ -40,7 +40,7 @@
 }
 
 .blocTutoWelcome {
-    font-size: 3rem;
+    font-size: 6vh;
     color: #003366;
     text-align: center;
 }

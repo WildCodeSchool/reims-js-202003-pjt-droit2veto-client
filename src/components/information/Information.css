@@ -1,24 +1,22 @@
 .formInfo {
     display: flex;
     flex-direction: column;
-    width: 45vw;
-    border-radius: 15px;
 }
 
 .labelInfo {
     display: flex;
     margin-top: 1vw;
     margin-bottom: 1vw;
-    font-size: 4vh;
+    font-size: 3vh;
     margin-left: 2vw;
     margin-right: 2vw;
 }
 
 .titleInfo {
     display: flex;
+    margin-left: 2vw;
     font-size: 5vh;
-    justify-content: center;
-    padding: 7vh 0;
+    color: #003366
 }
 
 .villeInfo {
@@ -32,15 +30,16 @@
 
 .inputInfo {
     height: 5vh;
-    font-size: 2rem;
+    font-size: 2.5vh;
     margin-left: 2vw;
     margin-right: 2vw;
+    width: 30vw;
 }
 
 .buttonValider {
     height: 10vh;
-    width: 15vw;
-    font-size: 2.5rem;
+    width: 12vw;
+    font-size: 4vh;
     color: white;
     background-color: #003366;
     border-radius: 15px;
