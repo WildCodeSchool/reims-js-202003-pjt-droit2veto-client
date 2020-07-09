@@ -76,16 +76,16 @@
 .logPageFormButton {
   width: 50%;
   height: 2rem;
-  background-color: white;
-  border: none;
-  margin-bottom: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: black;
+}
+
+.logPageFormButtonDiv {
+  display: flex;
+  justify-content: center;
 }
 
 .logPageLink {

@@ -8,37 +8,31 @@ import {
 } from 'react-router-dom';
 import './navbar.css';
 import profil from '../../icon/profil.png';
-import seringue from '../../icon/seringue.png';
 import maison from '../../icon/maison.png';
-import fiche from '../../icon/fiche.png';
-import woof from '../../icon/woof.png';
+import exit from '../../icon/exit.png';
+import paw from '../../icon/paw.png';
+import LogOut from '../home/LogOut';
 
 function NavBar() {
   return (
     <>
       <nav className="navbarVerticaleBloc">
-        <div>
-          <Link className="navbarTitle" to="/">Droit2Veto</Link>
-        </div>
+        <Link className="navbarTitle" to="/">Droit2Veto</Link>
         <ul>
           <li>
             <img src={profil} alt="" />
             <Link className="navbarLink" to="/informations">Mes informations</Link>
           </li>
           <li>
-            <img src={seringue} alt="" />
-            <Link className="navbarLink" to="/anesthesia">Plaquette anesthésie</Link>
-          </li>
-          <li>
             <img src={maison} alt="" />
-            <Link className="navbarLink" to="/activities">Plaquette d'activités</Link>
+            <Link className="navbarLink" to="/activities">Mes activités</Link>
           </li>
           <li>
-            <img src={fiche} alt="" />
-            <Link className="navbarLink" to="/order">Ma commande</Link>
+            <img src={exit} alt="" />
+            <LogOut />
           </li>
           <li>
-            <img id="navbarDogCat" src={woof} alt="" />
+            <img id="navbarPaw" src={paw} alt="" />
           </li>
         </ul>
       </nav>

@@ -6,30 +6,17 @@ function BlocTuto() {
   return (
 
     <div className="choixPage">
-
-      <div className="flexButtonLigne1">
+      <h1 className="blocTutoWelcome">Bienvenue sur Droit2Veto</h1>
+      <div className="flexButton">
 
         <div className="ButtonLink">
           <Link to="/informations" className="tutoButton">Mes informations</Link>
-          <p className="paraButton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
+          <p className="paraButton">Consulter vos informations personnelles</p>
         </div>
 
         <div className="ButtonLink">
           <Link to="/activities" className="tutoButton"> Mes activités </Link>
-          <p className="paraButton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
-        </div>
-
-      </div>
-
-      <div className="flexButtonLigne2">
-
-        <div className="ButtonLink">
-          <Link to="/anesthesia" className="tutoButton"> Plaquette d'anesthésie </Link>
-          <p className="paraButton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
-        </div>
-        <div className="ButtonLink">
-          <Link to="/order" className="tutoButton"> Ma commande </Link>
-          <p className="paraButton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptates officia esse neque ex asperiores?</p>
+          <p className="paraButton">Générer un pdf indiquant quelles activités vous pratiquez dans votre clinique</p>
         </div>
 
       </div>

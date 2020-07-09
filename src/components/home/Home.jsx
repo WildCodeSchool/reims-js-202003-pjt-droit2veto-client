@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import {
   BrowserRouter as
-    Router,
+  Router,
   Switch,
   Route,
   Link,
@@ -9,12 +9,9 @@ import {
 import { connect } from 'react-redux';
 import NavBar from '../navbar/NavBar';
 import '../navbar/navbar.css';
-import LoremIpsum from '../test/LoremIpsum';
-import BlocTuto from '../bloctuto/BlocTuto';
+import BlocTuto from '../blocTuto/BlocTuto';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
-import ProfilBar from '../profilbar/ProfilBar';
-import LogOut from './LogOut';
 import ManageActivities from '../activity/ManageActivities';
 import './home.css';
 
@@ -33,11 +30,6 @@ const Home = ({ token, history }) => {
 
   return (
     <Router>
-      <div className="navbarHorizontalBloc">
-        <Link className="navbarTitle" to="/">Droit2Veto</Link>
-        <p>Profil en cours</p>
-        <LogOut />
-      </div>
       <div className="navbarPage">
         <div>
           <NavBar />
@@ -50,17 +42,11 @@ const Home = ({ token, history }) => {
             <Route exact path="/informations">
               <Information />
             </Route>
-            <Route exact path="/anesthesia">
-              <LoremIpsum />
-            </Route>
             <Route exact path="/activities">
               <ActivityList />
             </Route>
             <Route exact path="/manageactivities">
               <ManageActivities />
-            </Route>
-            <Route exact path="/order">
-              <LoremIpsum />
             </Route>
           </Switch>
         </div>

@@ -22,7 +22,7 @@ function Information({ id }) {
   return (
     user && (
       <>
-        <div className="backInfo">
+        <div>
           <form
             className="formInfo"
             onSubmit={(event) => {
