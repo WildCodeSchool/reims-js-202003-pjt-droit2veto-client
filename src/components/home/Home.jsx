@@ -9,7 +9,6 @@ import {
 import { connect } from 'react-redux';
 import NavBar from '../navbar/NavBar';
 import '../navbar/navbar.css';
-import BlocTuto from '../blocTuto/BlocTuto';
 import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ManageActivities from '../activity/ManageActivities';
