@@ -20,9 +20,8 @@ function Activity({ activity, toggle, initialChecked, userId }) {
   return (
     <section className="unActivity">
       <div className="TitleAndDecri">
-        <h1 className="TitleActivity">{activity.title}</h1>
         <details className="DetailActivity">
-          <summary />
+          <summary className="TitleActivity">{activity.title}</summary>
           <p>{activity.description}</p>
         </details>
       </div>

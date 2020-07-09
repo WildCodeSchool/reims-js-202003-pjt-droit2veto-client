@@ -44,7 +44,7 @@ function ActivityList({ id, admin, history }) {
           {admin === 1
           && <Link to="/manageactivities">Admin</Link>}
           <button type="button" className="ValButActivityList" onClick={() => console.log(purchasedActivities)}>
-            Valider
+            PDF
           </button>
         </section>
         {allActivities.map((activity) => (
