@@ -25,6 +25,7 @@ const LogPage = ({ dispatch, history }) => {
             type: 'SETTOKEN',
             newToken: res.data.token,
             newId: res.data.user.id,
+            newadmin: res.data.user.admin,
           });
           history.push('/');
         })
