@@ -52,11 +52,11 @@ const LogPage = ({ dispatch, history }) => {
         }}
         >
           <div className="logPageFormInputDiv">
-            <label htmlFor="email">Adresse mail</label>
+            <label htmlFor="email" className="logPageLabel">Adresse mail</label>
             <input className="logPageFormInput" type="email" name="mail" id="email" placeholder="jean.dupont@gmail.com" onChange={(event) => setEmail(event.target.value)} required />
           </div>
           <div className="logPageFormInputDiv">
-            <label htmlFor="password">Mot de passe</label>
+            <label htmlFor="password" className="logPageLabel">Mot de passe</label>
             <input className="logPageFormInput" type="password" name="password" id="password" placeholder="secret1234" onChange={(event) => setPassword(event.target.value)} required />
           </div>
           <p className="logPageFormText">
