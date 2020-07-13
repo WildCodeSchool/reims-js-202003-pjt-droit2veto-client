@@ -14,3 +14,14 @@
     margin-left: 3vw;
     text-decoration: none;
 }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .TitleActivityList {
+        font-size: 2vh;
+    }
+    
+    .ValButActivityList{
+        padding: 1vh 1.5vw;
+        font-size: 2vh;
+    }
+}
