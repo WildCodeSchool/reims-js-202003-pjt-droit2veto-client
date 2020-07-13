@@ -95,14 +95,35 @@ function Information({ id }) {
               Téléphone personnel
             </label>
             <input type="text" name="telPerso" id="telPerso" className="inputInfo" onChange={(event) => setUser({ ...user, personal_phone: event.target.value })} value={user.personal_phone} />
-            <label className="labelInfo">
-              Logo
-            </label>
-            <input type="file" className="inputInfo" />
             <div className="buttonInfo">
               <button type="submit" className="buttonValider">Valider</button>
             </div>
           </form>
+
+          <form method="POST" encType="multipart/form-data" action="http://localhost:8000/uploadlogo">
+            <label className="labelInfo">
+              Logo
+            </label>
+            <input name="monfichier" type="file" className="inputInfo" />
+            <button type="submit"> envoyer </button>
+          </form>
+
+          {/* <form onSubmit={(event) => {
+            event.preventDefault();
+            const formData = new FormData();
+            const config = {
+              headers: { 'content-type': 'multipart/form-data' },
+            };
+            Axios.post("http://localhost:8000/uploadlogo", formData, config)
+              .then(() => console.log('success'))
+              .catch(() => console.log('zut'));
+          }}>
+            <label className="labelInfo">
+              Logo
+            </label>
+            <input name="monfichier" type="file" className="inputInfo" />
+            <button type="submit"> envoyer </button>
+          </form> */}
         </div>
       </>
     )
