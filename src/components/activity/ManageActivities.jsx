@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { connect } from 'react-redux';
+import Swal from 'sweetalert2';
 import './ManageActivities.css';
 
 const mapStateToProps = (state) => ({
@@ -66,8 +67,56 @@ const ManageActivities = ({ admin, history }) => {
                   {activity.title}
                 </summary>
                 <p className="AdminDiscription">{activity.description}</p>
+                <button
+                  type="button"
+                  onClick={
+                    () => {
+                      Swal.fire({
+                        title: 'Submit your Github username',
+                        input: 'text',
+                        inputValue: activity.description,
+                        inputAttributes: {
+                          autocapitalize: 'off',
+                        },
+                        showCancelButton: true,
+                        cancelButtonText: 'Annuler',
+                        preConfirm: (newDescription) => {
+                          Axios.put(`http://localhost:8000/activities/${activity.id}`, { description: newDescription })
+                            .then(() => getAllActivities())
+                            .catch((err) => console.log(err));
+                        },
+                      });
+                    }
+                  }
+                >
+                  Editer description
+                </button>
               </details>
             </div>
+            <button
+              type="button"
+              onClick={
+                () => {
+                  Swal.fire({
+                    title: 'Submit your Github username',
+                    input: 'text',
+                    inputValue: activity.title,
+                    inputAttributes: {
+                      autocapitalize: 'off',
+                    },
+                    showCancelButton: true,
+                    cancelButtonText: 'Annuler',
+                    preConfirm: (newTitle) => {
+                      Axios.put(`http://localhost:8000/activities/${activity.id}`, { title: newTitle })
+                        .then(() => getAllActivities())
+                        .catch((err) => console.log(err));
+                    },
+                  });
+                }
+              }
+            >
+              Editer Titre
+            </button>
             <button
               type="button"
               onClick={
