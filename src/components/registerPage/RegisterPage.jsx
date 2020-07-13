@@ -49,7 +49,7 @@ const RegisterPage = () => {
           </div>
           <div className="logPageFormInputDiv">
             <label htmlFor="ordinal_number" className="logPageLabel">Numero Ordinal</label>
-            <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="548934" maxlength = '6' minLength='6' onChange={(event) => setOrdinalNumber(event.target.value)} required />
+            <input className="logPageFormInput" type="text" name="ordinal_number" id="ordinal_number" placeholder="548934" maxlength = '7' minLength='5' onChange={(event) => setOrdinalNumber(event.target.value)} required />
           </div>
           <p className="logPageFormText">Déjà membre ? Connectez-vous <Link to="/login" className="logPageLink">ici</Link></p>
           <div className="logPageFormButtonDiv">
