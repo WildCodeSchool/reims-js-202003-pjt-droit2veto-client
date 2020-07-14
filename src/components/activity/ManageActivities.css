@@ -49,3 +49,25 @@
     height: 3vh;
     margin-bottom: 2vh;
 }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .AdminTitle{
+        font-size: 2vh;
+    }
+
+    .AdminDiscription{
+        font-size: 1.5vh;
+    }
+
+    .ButtonSupManageadmin{
+        margin-right: 1.5vw;
+    }
+
+    .titreManageAdmin{
+        font-size: 3vh;
+    }
+
+    .AdminLabel{
+        margin-left: 2vw;
+    }
+}
