@@ -12,12 +12,16 @@ function Information({ id }) {
   const [user, setUser] = useState(null);
   const [logo, setLogo] = useState(null);
 
-
-  useEffect(() => {
+  const getAllInformation = () => {
     Axios.get(`http://localhost:8000/users/${id}`)
       .then((res) => {
         setUser(res.data);
       });
+  };
+
+
+  useEffect(() => {
+    getAllInformation();
   }, []);
 
   return (
@@ -48,8 +52,14 @@ function Information({ id }) {
             <label htmlFor="prenom" className="labelInfo">
               Prénom
             </label>
-            <input type="text" name="prénom" id="prénom" className="inputInfo" onChange={(event) => setUser({ ...user, firstname: event.target.value })}
-              value={user.firstname} />
+            <input
+              type="text"
+              name="prénom"
+              id="prénom"
+              className="inputInfo"
+              onChange={(event) => setUser({ ...user, firstname: event.target.value })}
+              value={user.firstname}
+            />
             <label htmlFor="email" className="labelInfo">
               Email
             </label>
@@ -87,7 +97,7 @@ function Information({ id }) {
             <label htmlFor="pays" className="labelInfo">
               Pays
             </label>
-            <input type="text" name="pays" id="pays" className="inputInfo" value={"France"} />
+            <input type="text" name="pays" id="pays" className="inputInfo" value="France" />
             <label htmlFor="tel" className="labelInfo">
               Téléphone fixe de l'établissement
             </label>
@@ -101,14 +111,6 @@ function Information({ id }) {
             </div>
           </form>
 
-          {/* <form method="POST" encType="multipart/form-data" action="http://localhost:8000/uploadlogo">
-            <label className="labelInfo">
-              Logo
-            </label>
-            <input name="monfichier" type="file" className="inputInfo" />
-            <button type="submit"> envoyer </button>
-          </form> */}
-
           <form onSubmit={(event) => {
             event.preventDefault();
             const data = new FormData();
@@ -116,16 +118,27 @@ function Information({ id }) {
             const config = {
               headers: { 'content-type': 'multipart/form-data' },
             };
-            Axios.post('http://localhost:8000/uploadlogo', data, config)
+            Axios.post(`http://localhost:8000/uploadlogo/${id}`, data, config)
+              .catch((err) => console.log(err))
               .then(() => console.log('success'))
-              .catch((err) => console.log(err));
-          }}>
+              .then(() => getAllInformation());
+          }}
+          >
             <label className="labelInfo">
               Logo
             </label>
-            <input name="monfichier" type="file" className="inputInfo" onChange={(event) => setLogo(event.target.files[0])} />
+            <input
+              name="monfichier"
+              type="file"
+              className="inputInfo"
+              onChange={(event) => {
+                setLogo(event.target.files[0]);
+              }}
+            />
             <button type="submit"> envoyer </button>
           </form>
+          <img src={`http://localhost:8000${user.logo}`} alt="logo veto" />
+          <button type="button" onClick={() => getAllInformation()}>test</button>
         </div>
       </>
     )
