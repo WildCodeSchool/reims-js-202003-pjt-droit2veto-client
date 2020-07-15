@@ -97,3 +97,46 @@
   color: black;
   font-weight: bold;
 }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .logPageContainer {
+    background: no-repeat center/100% url('../../images/paul-hanaoka-URnWOJX8wW4-unsplash.jpg');
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .logPageTitle {
+    font-size: 4vh;
+    top: 2vh;
+    left: 5vw;
+  }
+
+  .logPageText1 {
+    font-size: 4vh;
+  }
+  
+  .logPageText2 {
+    font-size: 3vh;
+  }
+  
+  .logPageText3 {
+    font-size: 4vh;
+  }
+
+  .logPageLeft {
+    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logPageRight {
+    width: 90%;
+    align-items: flex-end;
+  }
+
+  .logPageTextDiv {
+    margin-top: 8vh;
+  }
+  
+
+}

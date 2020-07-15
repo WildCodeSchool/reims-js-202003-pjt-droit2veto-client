@@ -5,3 +5,11 @@
   cursor: pointer;
   font-size: 3vh;
 }
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .logoutButton {
+    font-size: 2vh;
+  }
+  
+}

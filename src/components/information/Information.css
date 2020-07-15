@@ -46,3 +46,26 @@
     cursor: pointer;
 }
 
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+.labelInfo {
+    font-size: 2vh;
+}
+
+.titleInfo {
+    font-size: 4vh;
+}
+
+.inputInfo {
+    height: 3vh;
+    font-size: 2vh;
+    width: 25vw;
+}
+
+.buttonValider {
+    height: 7vh;
+    width: 20vw;
+    font-size: 3vh;
+}
+
+}

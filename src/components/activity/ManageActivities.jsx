@@ -49,12 +49,12 @@ const ManageActivities = ({ admin, history }) => {
         <div className="AdminLabel">
           <div>
             <label htmlFor="Title" />
-            <p>Titre de l'activité :</p>
+            <p>Titre de l'activité</p>
             <input className="adminFormInput" type="title" name="title" id="title" placeholder="" onChange={(event) => setTitle(event.target.value)} required />
           </div>
           <div>
             <label htmlFor="description" />
-            <p>Description de l'activité :</p>
+            <p>Description de l'activité</p>
             <input className="adminFormInput" type="text" name="text" id="text" placeholder="" onChange={(event) => setDescription(event.target.value)} required />
           </div>
           <button type="submit" className="ValButActivityList">Valider</button>
