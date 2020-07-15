@@ -98,7 +98,7 @@ const ManageActivities = ({ admin, history }) => {
               onClick={
                 () => {
                   Swal.fire({
-                    title: 'Changer la decrition',
+                    title: 'Changer la description',
                     input: 'text',
                     inputValue: activity.title,
                     inputAttributes: {
