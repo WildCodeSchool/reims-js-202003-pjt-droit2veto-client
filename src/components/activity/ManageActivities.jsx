@@ -72,7 +72,7 @@ const ManageActivities = ({ admin, history }) => {
                   onClick={
                     () => {
                       Swal.fire({
-                        title: 'Submit your Github username',
+                        title: 'Changer le Titre',
                         input: 'text',
                         inputValue: activity.description,
                         inputAttributes: {
@@ -98,7 +98,7 @@ const ManageActivities = ({ admin, history }) => {
               onClick={
                 () => {
                   Swal.fire({
-                    title: 'Submit your Github username',
+                    title: 'Changer la decrition',
                     input: 'text',
                     inputValue: activity.title,
                     inputAttributes: {
