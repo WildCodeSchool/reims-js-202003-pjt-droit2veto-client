@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Information.css';
 import Axios from 'axios';
 import { connect } from 'react-redux';
-
+import FormData from 'form-data';
 
 const mapStateToProps = (state) => ({
   id: state.id,
@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
 
 function Information({ id }) {
   const [user, setUser] = useState(null);
+  const [logo, setLogo] = useState(null);
 
 
   useEffect(() => {
@@ -100,30 +101,31 @@ function Information({ id }) {
             </div>
           </form>
 
-          <form method="POST" encType="multipart/form-data" action="http://localhost:8000/uploadlogo">
-            <label className="labelInfo">
-              Logo
-            </label>
-            <input name="monfichier" type="file" className="inputInfo" />
-            <button type="submit"> envoyer </button>
-          </form>
-
-          {/* <form onSubmit={(event) => {
-            event.preventDefault();
-            const formData = new FormData();
-            const config = {
-              headers: { 'content-type': 'multipart/form-data' },
-            };
-            Axios.post("http://localhost:8000/uploadlogo", formData, config)
-              .then(() => console.log('success'))
-              .catch(() => console.log('zut'));
-          }}>
+          {/* <form method="POST" encType="multipart/form-data" action="http://localhost:8000/uploadlogo">
             <label className="labelInfo">
               Logo
             </label>
             <input name="monfichier" type="file" className="inputInfo" />
             <button type="submit"> envoyer </button>
           </form> */}
+
+          <form onSubmit={(event) => {
+            event.preventDefault();
+            const data = new FormData();
+            data.append('monfichier', logo);
+            const config = {
+              headers: { 'content-type': 'multipart/form-data' },
+            };
+            Axios.post('http://localhost:8000/uploadlogo', data, config)
+              .then(() => console.log('success'))
+              .catch((err) => console.log(err));
+          }}>
+            <label className="labelInfo">
+              Logo
+            </label>
+            <input name="monfichier" type="file" className="inputInfo" onChange={(event) => setLogo(event.target.files[0])} />
+            <button type="submit"> envoyer </button>
+          </form>
         </div>
       </>
     )
