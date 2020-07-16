@@ -142,7 +142,6 @@ function Information({ id }) {
             <button type="submit"> envoyer </button>
           </form>
           <img src={`http://localhost:8000${user.logo}`} alt="logo veto" />
-          <button type="button" onClick={() => getAllInformation()}>test</button>
         </div>
       </>
     )
