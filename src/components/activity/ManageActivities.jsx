@@ -68,69 +68,75 @@ const ManageActivities = ({ admin, history }) => {
                   <summary className="TitleActivity" className="AdminTitle">
                     {activity.title}
                   </summary>
-                  <p className="AdminDiscription">{activity.description}</p>
-                  <button
-                    type="button"
-                    onClick={
-                      () => {
-                        Swal.fire({
-                          title: 'Changer la description',
-                          input: 'text',
-                          inputValue: activity.description,
-                          inputAttributes: {
-                            autocapitalize: 'off',
-                          },
-                          showCancelButton: true,
-                          cancelButtonText: 'Annuler',
-                          preConfirm: (newDescription) => {
-                            Axios.put(`http://localhost:8000/activities/${activity.id}`, { description: newDescription })
-                              .then(() => getAllActivities())
-                              .catch((err) => console.log(err));
-                          },
-                        });
+                  <div className="descriptionDivAdmin">
+                    <p className="AdminDiscription">{activity.description}</p>
+                    <button
+                      type="button"
+                      className="buttonDescriptionAdmin"
+                      onClick={
+                        () => {
+                          Swal.fire({
+                            title: 'Changer la description',
+                            input: 'text',
+                            inputValue: activity.description,
+                            inputAttributes: {
+                              autocapitalize: 'off',
+                            },
+                            showCancelButton: true,
+                            cancelButtonText: 'Annuler',
+                            preConfirm: (newDescription) => {
+                              Axios.put(`http://localhost:8000/activities/${activity.id}`, { description: newDescription })
+                                .then(() => getAllActivities())
+                                .catch((err) => console.log(err));
+                            },
+                          });
+                        }
                       }
-                    }
-                  >
-                    Editer description
-                  </button>
+                    >
+                      Editer description
+                    </button>
+                  </div>
                 </details>
               </div>
-              <button
-                type="button"
-                onClick={
-                  () => {
-                    Swal.fire({
-                      title: 'Changer le titre',
-                      input: 'text',
-                      inputValue: activity.title,
-                      inputAttributes: {
-                        autocapitalize: 'off',
-                      },
-                      showCancelButton: true,
-                      cancelButtonText: 'Annuler',
-                      preConfirm: (newTitle) => {
-                        Axios.put(`http://localhost:8000/activities/${activity.id}`, { title: newTitle })
-                          .then(() => getAllActivities())
-                          .catch((err) => console.log(err));
-                      },
-                    });
+              <div className="buttonEditAdmin">
+                <button
+                  type="button"
+                  className="buttonTitleAdmin"
+                  onClick={
+                    () => {
+                      Swal.fire({
+                        title: 'Changer le titre',
+                        input: 'text',
+                        inputValue: activity.title,
+                        inputAttributes: {
+                          autocapitalize: 'off',
+                        },
+                        showCancelButton: true,
+                        cancelButtonText: 'Annuler',
+                        preConfirm: (newTitle) => {
+                          Axios.put(`http://localhost:8000/activities/${activity.id}`, { title: newTitle })
+                            .then(() => getAllActivities())
+                            .catch((err) => console.log(err));
+                        },
+                      });
+                    }
                   }
-                }
-              >
-                Editer Titre
-              </button>
-              <button
-                type="button"
-                onClick={
-                  () => {
-                    deleteActivity(activity.id);
-                    getAllActivities();
+                >
+                  Editer Titre
+                </button>
+                <button
+                  type="button"
+                  onClick={
+                    () => {
+                      deleteActivity(activity.id);
+                      getAllActivities();
+                    }
                   }
-                }
-                className="ButtonSupManageadmin"
-              >
-                X
-              </button>
+                  className="ButtonSupManageadmin"
+                >
+                  X
+                </button>
+              </div>
             </section>
             <form onSubmit={(event) => {
               event.preventDefault();
@@ -145,16 +151,16 @@ const ManageActivities = ({ admin, history }) => {
                 .then(() => getAllActivities());
             }}
             >
-              <input
+              <input className="buttonLogoAdmin"
                 name="adminLogoUpload"
                 type="file"
                 onChange={(event) => {
                   setLogo(event.target.files[0]);
                 }}
-              />
-              <button type="submit">Change logo</button>
+              /><br></br>
+              <button type="submit" className="buttonLogoAdmin">Ajouter mon logo</button>
             </form>
-            <img src={`http://localhost:8000/${activity.logo}`} alt="activity logo" />
+            <img src={`http://localhost:8000/${activity.logo}`} alt="" className="logoActivityAdmin"/>
           </>
         ))}
       </>
