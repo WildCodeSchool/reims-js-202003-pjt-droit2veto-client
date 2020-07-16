@@ -68,6 +68,10 @@ function Information({ id }) {
               Numéro ordinal
             </label>
             <input type="text" name="ordinal" id="ordinal" className="inputInfo" value={user.ordinal_number} />
+            <label htmlFor="siret" className="labelInfo">
+              Numéro de SIRET
+            </label>
+            <input type="text" name="siret" id="siret" className="inputInfo" value={user.siret_number} />
             <label htmlFor="etablissement" className="labelInfo">
               Nom de l'établissement
             </label>

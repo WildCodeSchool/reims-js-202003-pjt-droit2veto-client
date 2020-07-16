@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import './ActivityList.css';
 import { connect } from 'react-redux';
+import { saveAs } from 'file-saver';
 
 const mapStateToProps = (state) => ({
   id: state.id,
@@ -33,6 +34,15 @@ function ActivityList({ id, admin, history }) {
       });
   }, []);
 
+  const generatePdf = () => {
+    Axios.post(`http://localhost:8000/generatePdf/${id}/activities`, purchasedActivities)
+      .then(() => Axios.get(`http://localhost:8000/generatePdf/${id}/pdf`, { responseType: 'blob' }))
+      .then((res) => {
+        const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+        saveAs(pdfBlob, 'newPdf.pdf');
+      });
+  };
+
   return (
     <div className="backActivityList">
       <div className="allActivityList">
@@ -43,7 +53,7 @@ function ActivityList({ id, admin, history }) {
           </header>
           {admin === 1
           && <Link to="/manageactivities" className="ValButActivityList">Admin</Link>}
-          <button type="button" className="ValButActivityList" onClick={() => console.log(purchasedActivities)}>
+          <button type="button" className="ValButActivityList" onClick={() => generatePdf()}>
             PDF
           </button>
         </section>

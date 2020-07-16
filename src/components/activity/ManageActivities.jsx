@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { connect } from 'react-redux';
+import Swal from 'sweetalert2';
 import './ManageActivities.css';
 
 const mapStateToProps = (state) => ({
@@ -48,12 +49,12 @@ const ManageActivities = ({ admin, history }) => {
         <div className="AdminLabel">
           <div>
             <label htmlFor="Title" />
-            <p>Titre de l'activité :</p>
+            <p>Titre de l'activité</p>
             <input className="adminFormInput" type="title" name="title" id="title" placeholder="" onChange={(event) => setTitle(event.target.value)} required />
           </div>
           <div>
             <label htmlFor="description" />
-            <p>Description de l'activité :</p>
+            <p>Description de l'activité</p>
             <input className="adminFormInput" type="text" name="text" id="text" placeholder="" onChange={(event) => setDescription(event.target.value)} required />
           </div>
           <button type="submit" className="ValButActivityList">Valider</button>
@@ -66,8 +67,56 @@ const ManageActivities = ({ admin, history }) => {
                   {activity.title}
                 </summary>
                 <p className="AdminDiscription">{activity.description}</p>
+                <button
+                  type="button"
+                  onClick={
+                    () => {
+                      Swal.fire({
+                        title: 'Changer la description',
+                        input: 'text',
+                        inputValue: activity.description,
+                        inputAttributes: {
+                          autocapitalize: 'off',
+                        },
+                        showCancelButton: true,
+                        cancelButtonText: 'Annuler',
+                        preConfirm: (newDescription) => {
+                          Axios.put(`http://localhost:8000/activities/${activity.id}`, { description: newDescription })
+                            .then(() => getAllActivities())
+                            .catch((err) => console.log(err));
+                        },
+                      });
+                    }
+                  }
+                >
+                  Editer description
+                </button>
               </details>
             </div>
+            <button
+              type="button"
+              onClick={
+                () => {
+                  Swal.fire({
+                    title: 'Changer le titre',
+                    input: 'text',
+                    inputValue: activity.title,
+                    inputAttributes: {
+                      autocapitalize: 'off',
+                    },
+                    showCancelButton: true,
+                    cancelButtonText: 'Annuler',
+                    preConfirm: (newTitle) => {
+                      Axios.put(`http://localhost:8000/activities/${activity.id}`, { title: newTitle })
+                        .then(() => getAllActivities())
+                        .catch((err) => console.log(err));
+                    },
+                  });
+                }
+              }
+            >
+              Editer Titre
+            </button>
             <button
               type="button"
               onClick={

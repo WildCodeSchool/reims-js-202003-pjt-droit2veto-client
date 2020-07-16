@@ -105,3 +105,13 @@ details summary::marker {
  details[open] summary:after {
     content: "-";
  }
+
+ @media screen and (min-width: 768px) and (max-width: 992px) {
+    .TitleAndDecri{
+        font-size: 1.5vh;
+    }
+
+    summary:after {
+        font-size: 2vh;
+    }
+ }
