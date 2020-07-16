@@ -20,6 +20,7 @@ const mapStateToProps = (state) => ({
 function ActivityList({ id, admin, history }) {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
+  const [color, setColor] = useState('#003366');
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/users/${id}/activities`)
@@ -51,14 +52,17 @@ function ActivityList({ id, admin, history }) {
             <h1>Mes Activités</h1>
             <p>Veuillez cocher les activités de votre établissement (20 activités maximum)</p>
           </header>
-          {admin === 1
-            && <Link to="/manageactivities" className="ValButActivityList">Admin</Link>}
-          <button type="button" className="ValButActivityList" onClick={() => generatePdf()}>
-            PDF
-          </button>
+          <div className="buttonActivityDiv">
+            {admin === 1
+              && <Link to="/manageactivities" className="buttonAdmin">Admin</Link>}
+            <button type="button" className="ValButActivityList" onClick={() => generatePdf()}>
+              PDF
+            </button>
+          </div>
         </section>
         {allActivities.map((activity) => (
-          <>
+          <div className="activityListAll">
+            <img src={`http://localhost:8000/${activity.logo}`} alt="" className="logoActivity" />
             <Activity
               activity={activity}
               userId={id}
@@ -77,8 +81,7 @@ function ActivityList({ id, admin, history }) {
               }}
               initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.Activities_id === activity.id) !== -1}
             />
-            <img src={`http://localhost:8000/${activity.logo}`} alt="activity logo" />
-          </>
+          </div>
         ))}
       </div>
     </div>
