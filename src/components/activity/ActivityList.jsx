@@ -3,7 +3,7 @@ import Axios from 'axios';
 import Activity from './Activity';
 import {
   BrowserRouter as
-    Router,
+  Router,
   Switch,
   Route,
   Link,
@@ -11,6 +11,7 @@ import {
 import './ActivityList.css';
 import { connect } from 'react-redux';
 import { saveAs } from 'file-saver';
+import { SketchPicker } from 'react-color';
 
 const mapStateToProps = (state) => ({
   id: state.id,
@@ -20,7 +21,7 @@ const mapStateToProps = (state) => ({
 function ActivityList({ id, admin, history }) {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
-  const [color, setColor] = useState('#003366');
+  const [pdfColor, setPdfColor] = useState({ colorText: '#ffffff', colorBackground: '#003366' });
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/users/${id}/activities`)
@@ -58,6 +59,15 @@ function ActivityList({ id, admin, history }) {
             <button type="button" className="ValButActivityList" onClick={() => generatePdf()}>
               PDF
             </button>
+            <SketchPicker
+              color={pdfColor.colorText}
+              onChangeComplete={(color) => {
+                setPdfColor({ ...pdfColor, colorText: color.hex });
+                // Axios.put(`http://localhost8000/users/${id}`, { color_text: pdfColor.colorText })
+                //   .then(() => console.log('hello'))
+                //   .catch((err) => console.log(err))
+              }}
+            />
           </div>
         </section>
         {allActivities.map((activity) => (
