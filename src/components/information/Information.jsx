@@ -28,6 +28,34 @@ function Information({ id }) {
     user && (
       <>
         <div>
+          <h1 className="titleInfo">Mes informations</h1>
+          <form onSubmit={(event) => {
+            event.preventDefault();
+            const data = new FormData();
+            data.append('monfichier', logo);
+            const config = {
+              headers: { 'content-type': 'multipart/form-data' },
+            };
+            Axios.post(`http://localhost:8000/uploadlogo/${id}`, data, config)
+              .catch((err) => console.log(err))
+              .then(() => console.log('success'))
+              .then(() => getAllInformation());
+          }}
+          >
+            <label className="labelInfo">
+              Logo
+            </label>
+            <input
+              name="monfichier"
+              type="file"
+              className="inputInfo"
+              onChange={(event) => {
+                setLogo(event.target.files[0]);
+              }}
+            />
+            <button type="submit" className="buttonValider"> envoyer </button>
+          </form>
+          <img src={`http://localhost:8000${user.logo}`} alt="" className="logoInformation" />
           <form
             className="formInfo"
             onSubmit={(event) => {
@@ -37,7 +65,6 @@ function Information({ id }) {
             }}
             name="formulaire"
           >
-            <h1 className="titleInfo">Mes informations</h1>
             <label htmlFor="nom" className="labelInfo">
               Nom
             </label>
@@ -114,34 +141,6 @@ function Information({ id }) {
               <button type="submit" className="buttonValider">Valider</button>
             </div>
           </form>
-
-          <form onSubmit={(event) => {
-            event.preventDefault();
-            const data = new FormData();
-            data.append('monfichier', logo);
-            const config = {
-              headers: { 'content-type': 'multipart/form-data' },
-            };
-            Axios.post(`http://localhost:8000/uploadlogo/${id}`, data, config)
-              .catch((err) => console.log(err))
-              .then(() => console.log('success'))
-              .then(() => getAllInformation());
-          }}
-          >
-            <label className="labelInfo">
-              Logo
-            </label>
-            <input
-              name="monfichier"
-              type="file"
-              className="inputInfo"
-              onChange={(event) => {
-                setLogo(event.target.files[0]);
-              }}
-            />
-            <button type="submit"> envoyer </button>
-          </form>
-          <img src={`http://localhost:8000${user.logo}`} alt="logo veto" />
         </div>
       </>
     )

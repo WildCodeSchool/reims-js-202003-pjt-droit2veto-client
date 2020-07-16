@@ -37,13 +37,22 @@
 }
 
 .buttonValider {
-    height: 10vh;
-    width: 12vw;
-    font-size: 4vh;
+    height: 6vh;
+    width: 7vw;
+    font-size: 2.8vh;
     color: white;
     background-color: #003366;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.buttonAddLogo {
+    font-size: 2vh;
+}
+
+.logoInformation {
+    width: 5vw;
+    margin-left: 2vw;
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
