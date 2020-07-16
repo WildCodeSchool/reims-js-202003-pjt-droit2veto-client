@@ -13,6 +13,7 @@ const ManageActivities = ({ admin, history }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [allActivities, setAllActivities] = useState([]);
+  const [logo, setLogo] = useState(null);
 
 
   function post() {
@@ -60,76 +61,101 @@ const ManageActivities = ({ admin, history }) => {
           <button type="submit" className="ValButActivityList">Valider</button>
         </div>
         {allActivities.map((activity) => (
-          <section className="ListeActivitiesAdmin">
-            <div className="AdminTitleAndDiscription">
-              <details className="DetailActivity">
-                <summary className="TitleActivity" className="AdminTitle">
-                  {activity.title}
-                </summary>
-                <p className="AdminDiscription">{activity.description}</p>
-                <button
-                  type="button"
-                  onClick={
-                    () => {
-                      Swal.fire({
-                        title: 'Changer la description',
-                        input: 'text',
-                        inputValue: activity.description,
-                        inputAttributes: {
-                          autocapitalize: 'off',
-                        },
-                        showCancelButton: true,
-                        cancelButtonText: 'Annuler',
-                        preConfirm: (newDescription) => {
-                          Axios.put(`http://localhost:8000/activities/${activity.id}`, { description: newDescription })
-                            .then(() => getAllActivities())
-                            .catch((err) => console.log(err));
-                        },
-                      });
+          <>
+            <section className="ListeActivitiesAdmin">
+              <div className="AdminTitleAndDiscription">
+                <details className="DetailActivity">
+                  <summary className="TitleActivity" className="AdminTitle">
+                    {activity.title}
+                  </summary>
+                  <p className="AdminDiscription">{activity.description}</p>
+                  <button
+                    type="button"
+                    onClick={
+                      () => {
+                        Swal.fire({
+                          title: 'Changer la description',
+                          input: 'text',
+                          inputValue: activity.description,
+                          inputAttributes: {
+                            autocapitalize: 'off',
+                          },
+                          showCancelButton: true,
+                          cancelButtonText: 'Annuler',
+                          preConfirm: (newDescription) => {
+                            Axios.put(`http://localhost:8000/activities/${activity.id}`, { description: newDescription })
+                              .then(() => getAllActivities())
+                              .catch((err) => console.log(err));
+                          },
+                        });
+                      }
                     }
+                  >
+                    Editer description
+                  </button>
+                </details>
+              </div>
+              <button
+                type="button"
+                onClick={
+                  () => {
+                    Swal.fire({
+                      title: 'Changer le titre',
+                      input: 'text',
+                      inputValue: activity.title,
+                      inputAttributes: {
+                        autocapitalize: 'off',
+                      },
+                      showCancelButton: true,
+                      cancelButtonText: 'Annuler',
+                      preConfirm: (newTitle) => {
+                        Axios.put(`http://localhost:8000/activities/${activity.id}`, { title: newTitle })
+                          .then(() => getAllActivities())
+                          .catch((err) => console.log(err));
+                      },
+                    });
                   }
-                >
-                  Editer description
-                </button>
-              </details>
-            </div>
-            <button
-              type="button"
-              onClick={
-                () => {
-                  Swal.fire({
-                    title: 'Changer le titre',
-                    input: 'text',
-                    inputValue: activity.title,
-                    inputAttributes: {
-                      autocapitalize: 'off',
-                    },
-                    showCancelButton: true,
-                    cancelButtonText: 'Annuler',
-                    preConfirm: (newTitle) => {
-                      Axios.put(`http://localhost:8000/activities/${activity.id}`, { title: newTitle })
-                        .then(() => getAllActivities())
-                        .catch((err) => console.log(err));
-                    },
-                  });
                 }
-              }
-            >
-              Editer Titre
-            </button>
-            <button
-              type="button"
-              onClick={
-                () => {
-                  deleteActivity(activity.id);
-                  getAllActivities();
+              >
+                Editer Titre
+              </button>
+              <button
+                type="button"
+                onClick={
+                  () => {
+                    deleteActivity(activity.id);
+                    getAllActivities();
+                  }
                 }
-              }
-              className="ButtonSupManageadmin"
+                className="ButtonSupManageadmin"
+              >
+                X
+              </button>
+            </section>
+            <form onSubmit={(event) => {
+              event.preventDefault();
+              const data = new FormData();
+              data.append('adminLogoUpload', logo);
+              const config = {
+                headers: { 'content-type': 'multipart/form-data' },
+              };
+              Axios.post(`http://localhost:8000/uploadlogo/activity/${activity.id}`, data, config)
+                .catch((err) => console.log(err))
+                .then(() => console.log('success'))
+                .then(() => getAllActivities());
+            }}
             >
-              X
-            </button>
-          </section>
+              <input
+                name="adminLogoUpload"
+                type="file"
+                onChange={(event) => {
+                  setLogo(event.target.files[0]);
+                }}
+              />
+              <button type="submit">Change logo</button>
+            </form>
+            <img src={`http://localhost:8000/${activity.logo}`} alt="activity logo" />
+          </>
         ))}
       </>
     </form>

@@ -52,30 +52,33 @@ function ActivityList({ id, admin, history }) {
             <p>Veuillez cocher les activités de votre établissement (20 activités maximum)</p>
           </header>
           {admin === 1
-          && <Link to="/manageactivities" className="ValButActivityList">Admin</Link>}
+            && <Link to="/manageactivities" className="ValButActivityList">Admin</Link>}
           <button type="button" className="ValButActivityList" onClick={() => generatePdf()}>
             PDF
           </button>
         </section>
         {allActivities.map((activity) => (
-          <Activity
-            activity={activity}
-            userId={id}
-            toggle={() => {
-              const purchasedIndex = purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id);
-              const isPurchased = (purchasedIndex !== -1);
-              if (isPurchased) {
-                setPurchasedActivities(
-                  purchasedActivities.filter((purchasedActivity) => purchasedActivity.id !== activity.id),
-                );
-              } else {
-                setPurchasedActivities(
-                  [...purchasedActivities, activity],
-                );
-              }
-            }}
-            initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.Activities_id === activity.id) !== -1}
-          />
+          <>
+            <Activity
+              activity={activity}
+              userId={id}
+              toggle={() => {
+                const purchasedIndex = purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.id === activity.id);
+                const isPurchased = (purchasedIndex !== -1);
+                if (isPurchased) {
+                  setPurchasedActivities(
+                    purchasedActivities.filter((purchasedActivity) => purchasedActivity.id !== activity.id),
+                  );
+                } else {
+                  setPurchasedActivities(
+                    [...purchasedActivities, activity],
+                  );
+                }
+              }}
+              initialChecked={purchasedActivities.findIndex((purchasedActivity) => purchasedActivity.Activities_id === activity.id) !== -1}
+            />
+            <img src={`http://localhost:8000/${activity.logo}`} alt="activity logo" />
+          </>
         ))}
       </div>
     </div>
