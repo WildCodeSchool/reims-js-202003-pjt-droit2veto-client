@@ -5,15 +5,27 @@ import Swal from 'sweetalert2';
 import './ManageActivities.css';
 
 const mapStateToProps = (state) => ({
-  admin: state.admin,
+  id: state.id,
 });
 
 
-const ManageActivities = ({ admin, history }) => {
+const ManageActivities = ({ id, history }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [allActivities, setAllActivities] = useState([]);
 
+  const noAdmin = () => {
+    Axios.get(`http://localhost:8000/users/admin/${id}`)
+      .then((res) => {
+        if (res.data.admin !== 1) {
+          history.push('/activities');
+        }
+      });
+  };
+
+  useEffect(() => {
+    noAdmin();
+  });
 
   function post() {
     Axios.post('http://localhost:8000/activities', { title, description }).then(
