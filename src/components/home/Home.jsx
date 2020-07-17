@@ -13,7 +13,7 @@ import Information from '../information/Information';
 import ActivityList from '../activity/ActivityList';
 import ManageActivities from '../activity/ManageActivities';
 import './home.css';
-import BlocTuto from '../blocTuto/BlocTuto';
+import BlocTuto from '../bloctuto/BlocTuto';
 
 
 const mapStateToProps = (state) => ({

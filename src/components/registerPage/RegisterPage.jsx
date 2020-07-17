@@ -5,26 +5,54 @@ import {
 } from 'react-router-dom';
 import '../logPage/logPage.css';
 import Axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-const RegisterPage = () => {
+const RegisterPage = ({ history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [ordinalNumber, setOrdinalNumber] = useState('');
 
+  const notifySuccess = () => toast.success('Enregistrement reussi', {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
+  const notifyError = () => toast.error('Enregistrement a échoué', {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
+
+  toast.configure();
   function post() {
     Axios.post('http://localhost:8000/users', {
-      email : email, password : password, ordinal_number: ordinalNumber,
+      email, password, ordinal_number: ordinalNumber,
     })
       .then(
-        (res) =>alert("enregistrement reussi"),
+        (res) => {
+          notifySuccess();
+        },
       )
       .catch(
-        (err) => alert("bad request"),
+        (err) => notifyError(),
       );
   }
   return (
+
     <div className="logPageContainer">
+      <ToastContainer />
       <section className="logPageLeft">
         <h1 className="logPageTitle">Droit2Veto</h1>
         <div className="logPageTextDiv">
@@ -51,7 +79,10 @@ const RegisterPage = () => {
             <label htmlFor="ordinal_number" className="logPageLabel">Numero Ordinal</label>
             <input className="logPageFormInput" type="number" name="ordinal_number" id="ordinal_number" placeholder="548934" max="9999999" min="10000" onChange={(event) => setOrdinalNumber(event.target.value)} required />
           </div>
-          <p className="logPageFormText">Déjà membre ? Connectez-vous <Link to="/login" className="logPageLink">ici</Link></p>
+          <p className="logPageFormText">
+            Déjà membre ? Connectez-vous
+            <Link to="/login" className="logPageLink">ici</Link>
+          </p>
           <div className="logPageFormButtonDiv">
             <button type="submit" className="logPageFormButton">S'inscrire</button>
           </div>

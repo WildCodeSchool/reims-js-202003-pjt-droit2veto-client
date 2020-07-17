@@ -5,6 +5,8 @@ import {
 import './logPage.css';
 import Axios from 'axios';
 import { connect } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const mapStateToProps = (state) => ({
   token: state.token,
@@ -14,6 +16,16 @@ const mapStateToProps = (state) => ({
 const LogPage = ({ dispatch, history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const notifyError = () => toast.error('Indentifiants incorrects', {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
   function post() {
     Axios.post('http://localhost:8000/auth/login', {
@@ -30,13 +42,14 @@ const LogPage = ({ dispatch, history }) => {
           history.push('/');
         })
       .catch(
-        (err) => alert('bad request'),
+        (err) => notifyError(),
       );
   }
 
 
   return (
     <div className="logPageContainer">
+      <ToastContainer />
       <section className="logPageLeft">
         <h1 className="logPageTitle">Droit2Veto</h1>
         <div className="logPageTextDiv">
