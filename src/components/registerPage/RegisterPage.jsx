@@ -38,7 +38,7 @@ const RegisterPage = ({ history }) => {
   toast.configure();
   function post() {
     Axios.post('http://localhost:8000/users', {
-      email, password, ordinal_number: ordinalNumber,
+      email, password, ordinal_number: ordinalNumber, color_text: '#ffffff', color_background: '#003366',
     })
       .then(
         (res) => {
