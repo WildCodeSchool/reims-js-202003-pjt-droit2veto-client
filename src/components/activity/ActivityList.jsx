@@ -3,7 +3,7 @@ import Axios from 'axios';
 import Activity from './Activity';
 import {
   BrowserRouter as
-    Router,
+  Router,
   Switch,
   Route,
   Link,
@@ -11,6 +11,7 @@ import {
 import './ActivityList.css';
 import { connect } from 'react-redux';
 import { saveAs } from 'file-saver';
+import { SketchPicker } from 'react-color';
 
 const mapStateToProps = (state) => ({
   id: state.id,
@@ -20,7 +21,7 @@ const mapStateToProps = (state) => ({
 function ActivityList({ id, admin, history }) {
   const [purchasedActivities, setPurchasedActivities] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
-  const [color, setColor] = useState('#003366');
+  const [pdfColor, setPdfColor] = useState({ colorText: '#ffffff', colorBackground: '#003366' });
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/users/${id}/activities`)
@@ -44,6 +45,12 @@ function ActivityList({ id, admin, history }) {
       });
   };
 
+  const valideColor = () => {
+    Axios.put(`http://localhost:8000/users/${id}`, { color_text: pdfColor.colorText, color_background: pdfColor.colorBackground })
+      .then(() => console.log('colors saved'))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="backActivityList">
       <div className="allActivityList">
@@ -51,10 +58,31 @@ function ActivityList({ id, admin, history }) {
           <header className="TitleActivityList">
             <h1>Mes Activités</h1>
             <p>Veuillez cocher les activités de votre établissement (20 activités maximum)</p>
-          </header>
-          <div className="buttonActivityDiv">
             {admin === 1
               && <Link to="/manageactivities" className="buttonAdmin">Admin</Link>}
+          </header>
+          <div className="buttonActivityDiv">
+            <div className="activityColorDiv">
+              <p>Changer la couleur du texte</p>
+              <SketchPicker
+                color={pdfColor.colorText}
+                onChangeComplete={(color) => {
+                  setPdfColor({ ...pdfColor, colorText: color.hex });
+                }}
+              />
+            </div>
+            <div className="activityColorDiv">
+              <p>Changer la couleur du bandeau</p>
+              <SketchPicker
+                color={pdfColor.colorBackground}
+                onChangeComplete={(color) => {
+                  setPdfColor({ ...pdfColor, colorBackground: color.hex });
+                }}
+              />
+            </div>
+            <button type="button" className="ValButActivityList" onClick={() => valideColor()}>
+              Sauvegarder les couleurs
+            </button>
             <button type="button" className="ValButActivityList" onClick={() => generatePdf()}>
               PDF
             </button>

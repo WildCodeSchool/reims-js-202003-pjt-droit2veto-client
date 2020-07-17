@@ -23,12 +23,12 @@
 .buttonAdmin {
     padding: 1vw;
     height: 3vh;
+    width: 5vw;
     background-color: #003366;
     color: white;
     font-size: 3vh;
     border-radius: 10px;
     cursor: pointer;
-    margin-left: 3vw;
     margin-bottom: 2vh;
     text-decoration: none;
     display: flex;
@@ -52,7 +52,20 @@
 .buttonActivityDiv {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: baseline;
+    margin-right: 2vw;
+}
+
+.activityColorDiv{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+    color: #003366;
+    font-size: 1.2vw;
+    text-align: center;
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -63,5 +76,11 @@
     .ValButActivityList{
         padding: 1vh 1.5vw;
         font-size: 2vh;
+        height: 4vh;
+    }
+
+    .buttonAdmin {
+        font-size: 1.8vh;
+        width: 6vw;
     }
 }
